@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const useAxios = (url: string) => {
   const [data, setData] = useState(null);
-  const [failed, setFailed] = useState(null);
+  const [failed, setFailed] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

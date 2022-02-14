@@ -1,0 +1,51 @@
+/* Color */
+$color-primary: rgba(255, 87, 87, 1);
+$colorBlack: #262626;
+$colorWhite: #fff;
+$colorGray: rgba(204, 204, 204, 1);
+$colorBackgroundGray: rgba(241, 243, 244, 1);
+
+/* Font size */
+$fontMedium: 16px;
+$fontRegular: 15px;
+$fontSmall: 12px;
+
+/* Font weight */
+$weightBold: 600;
+$weightRegular: 500;
+$weightNormal: 400;
+
+/* Border */
+$borderGray: 1px solid $colorGray;
+$borderDarkgray: 1px solid rgb(103, 103, 103);
+
+/* Margin */
+$marginCenter: 0 auto;
+
+/* width */
+$max-width: 375px;
+
+/* Display */
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexSpaceBetweenCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexStart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flexColumnCenter {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

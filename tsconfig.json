@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "components/*": ["components/*"],
-      "config/*": ["config/*"],
-      "pages/*": ["pages/*"],
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
       "styles/*": ["styles/*"],
-      "hooks/*": ["hooks/*"]
+      "hooks/*": ["src/hooks/*"],
+      "asset/icon": ["icon/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

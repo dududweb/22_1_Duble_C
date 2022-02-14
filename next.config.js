@@ -2,6 +2,8 @@
  * @type {import('next').NextConfig}
  */
 const path = require('path');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+
 module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
