@@ -1,22 +1,36 @@
 {
-  "name": "nico_neco",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.0.10",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "17.0.17",
-    "@types/react": "17.0.39",
-    "eslint": "8.9.0",
-    "eslint-config-next": "12.0.10",
-    "typescript": "4.5.5"
-  }
+	"name": "nico_neco",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"axios": "^0.26.0",
+		"next": "^12.0.10",
+		"react": "^17.0.2",
+		"react-dom": "17.0.2",
+		"router-dom": "^2.2.9",
+		"sass": "^1.49.7"
+	},
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.5.4",
+		"@types/node": "17.0.17",
+		"@types/react": "17.0.39",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^8.9.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-next": "12.0.10",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-babel": "^5.3.1",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"prettier": "^2.5.1",
+		"typescript": "4.5.5"
+	}
 }
