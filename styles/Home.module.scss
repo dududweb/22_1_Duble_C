@@ -1,0 +1,7 @@
+@import './variables.module';
+
+.main {
+  width: $mobile-width;
+  margin: $marginCenter;
+  background-color: $colorBackgroundGray;
+}
