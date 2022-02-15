@@ -1,5 +1,21 @@
 @import './variables.module';
 
-.weight500 {
-  font-weight: 600;
+.nav {
+  width: $mobile-width;
+  max-width: $max-width;
+  margin: $marginCenter;
+  background-color: #fff;
+
+  .navWrap {
+    display: flex;
+    align-items: center;
+    padding: 7px 17px;
+  }
+
+  .logo {
+    width: 250px;
+    text-align: center;
+    font-weight: $weightBold;
+    margin-left: 20px;
+  }
 }
