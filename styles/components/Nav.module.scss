@@ -1,9 +1,7 @@
 @import './variables.module';
 
 .nav {
-  width: $mobile-width;
-  max-width: $max-width;
-  margin: $marginCenter;
+  width: 100%;
   background-color: #fff;
 
   .navWrap {

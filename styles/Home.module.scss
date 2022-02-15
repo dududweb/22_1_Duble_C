@@ -5,3 +5,19 @@
   margin: $marginCenter;
   background-color: $colorBackgroundGray;
 }
+
+.eventTag {
+  width: $inner-width;
+  margin: 29px auto 0;
+
+  .titleTag {
+    font-size: 13px;
+    color: $color-primary;
+  }
+
+  .event {
+    font-size: $fontMedium;
+    font-weight: $weightBold;
+    margin-top: 5px;
+  }
+}

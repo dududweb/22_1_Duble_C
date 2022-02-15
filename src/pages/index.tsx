@@ -15,6 +15,7 @@ const Home: NextPage = () => {
       .then(res => setCategoriesData(res.data.conCategory1s))
       .catch(err => console.log(err));
   }, []);
+  console.log(categoriesData);
 
   return (
     <div className={styles.main}>
@@ -25,6 +26,10 @@ const Home: NextPage = () => {
       </Head>
       <Nav />
       <BrandCard data={categoriesData} />
+      <div className={styles.eventTag}>
+        <h3 className={styles.titleTag}>놓치지 마세요.</h3>
+        <h2 className={styles.event}>오늘의 땡처리콘!</h2>
+      </div>
     </div>
   );
 };
