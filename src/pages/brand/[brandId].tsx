@@ -14,9 +14,9 @@ function Brnad() {
 
   const [filterBrand, setFilterBrand] = useState([]);
   useEffect(() => {
-    axios(`https://api2.ncnc.app/con-category1s/${brandId}/nested`)
-      .then(res => setFilterBrand(res.data.conCategory1.conCategory2s))
-      .catch(err => console.log(err));
+    axios(`https://api2.ncnc.app/con-category1s/${brandId}/nested`).then(res =>
+      setFilterBrand(res.data.conCategory1.conCategory2s),
+    );
   }, []);
 
   return (
