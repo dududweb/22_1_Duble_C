@@ -1,16 +1,8 @@
 # Team5 응급코딩과 🚑
 
-### 로그인 기능
-
-![Swit - Chrome 1](https://user-images.githubusercontent.com/84889602/153701527-df004d81-fda4-41da-b302-bf4ff2d56fef.gif)
-
-### 채팅방 기능
-
-![Swit - Chrome 2](https://user-images.githubusercontent.com/84889602/153701532-bc9ecfee-8be9-46ab-bb04-1fd6ded4d441.gif)
-
 ## 프로젝트 소개
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+중고기프티콘 플랫폼 니콘내콘 클론과제 프로젝트
 
 ## 배포 링크
 
@@ -42,31 +34,25 @@ There are many great README templates available on GitHub; however, I didn't fin
 
 - [`김태영`]
 
-  - 레이아웃: 좌측 네비게이션 레이아웃 작성
-  - 입력창
-    - input value를 엔터키로 전송
-    - state에 저장된 데이터가 없을 경우 컨텐츠를 입력하지 않으면 전송 불가능 하도록 작성
-  - 메시지
-    - 내가 전송한 메시지 \* 표시
-    - confirm() 함수를 사용하여 삭제버튼 클릭 시 메시지 출력
-  - redux:
-    - message 추가, 삭제 reducer, action, store
+  - 브랜드 페이지 레이아웃 작성
+  - 메인 및 브랜드 간의 동적 라우트 적용
 
 - [`황주영`]
 
-  - 로그인 페이지 레이아웃 구현, 유효성 검사처리.
-  - 이미지업로드 기능 및 이미지 redux 전역상태관리 구현.
-  - 체팅 작성 일자 표시 기능 추가 및 redux 전역상태관리 구현.
+  - 초기세팅
+  - 절대경로 설정
+  - 메인페이지 레이아웃 공통컴포넌트 사용.
 
 ## 프로젝트 회고
 
 - [`김태영`]
 
-  - porps를 여러번 내려줄 때마다 전역상태 관리의 필요성을 느꼈고 이번 프로젝트에서 redux를 사용했습니다. 처음 사용하는 것이라 팀원 모두가 미숙하지만 한번 만들고 사용하게 되니 뎁스가 깊어도 쉽게 불러올 수 있고 컴포넌트 리렌더링이 적어서 redux를 알아갈수록 선녀처럼 보입니다. 새로운 기술을 배우는 것이 어렵지만 왜 이러한 기술이 생기고 사용되는지를 알아갈 수 있는 경험이었습니다.
+  - next.js가 react와 큰 차이가 없다는 말을 들었을 때는 편하게 진행할 수 있을거라고 생각했지만 막상 찾아보면서 적용하려하니
+    이해가 안되는 부분도 많고 시간도 부족했습니다. 많은 기능을 만드는 것이 아니고 데이터를 불러와서 전달해주는 간단한 작업이라고 생각했는데 최종적으로 다 끝내지 못 하였습니다. 부족한 부분은 남은 시간동안 더 공부해야 어느정도 사용할 수 있을거 같다는 생각이 들었습니다.
 
 - [`황주영`]
 
-  - 리덕스를 처음 적용해보면서 다소 어려웠지만 적용하게 된 이후로 전역상태의 편리함을 몸소 느꼈습니다. 이번 리덕스를 적용시킬 때 팀원 모두가 모르는 상태였는데 팀원이 하나되어 같이 공부하고 공유하였기 때문에 리덕스를 적용할 수 있었던 것 같습니다. 또한 앞으로 더욱 공부해야할 부분도 파악하게 되어 뜻 깊었던 프로젝트였습니다.
+  - Next.JS를 처음 적용해보면서 초기세팅부터 해매면서 데이터 수신부터 이해가 안되고 Next.js의 방식을 이해하지 못한 채 진행한 것이 프로젝트 실패로 이어진 것 같습니다. 최종적으로 다 끝내지 못해서 팀, 개인적으로 너무 아쉽다고 생각하지만 이것을 계기로 삼아 Next.JS와 프로젝트 전체구조를 먼저 생각하는 힘에 대해 더욱 심도 있게 공부해야한다고 느꼈습니다.
 
 <br/><br/>
 
