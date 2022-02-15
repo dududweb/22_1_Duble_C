@@ -4,7 +4,7 @@ import { GetCategoryData } from 'types/interface';
 
 const Main = ({ data }: GetCategoryData) => {
   console.log(data);
-  return <div className="main">메인페이지데이터체크</div>;
+  return <div className="main"></div>;
 };
 
 export const getStaticProps = async () => {
