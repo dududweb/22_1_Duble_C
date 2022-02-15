@@ -2,8 +2,7 @@ import type { GetStaticProps } from 'next';
 import axios from 'axios';
 import { GetCategoryData } from 'types/interface';
 
-const Main = ({ data }: GetCategoryData) => {
-  console.log(data);
+const Main = () => {
   return <div className="main"></div>;
 };
 
