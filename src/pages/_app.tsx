@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import NavLayout from 'components/nav/NavLayout';
+import Layout from 'components/Layout';
 import '../../styles/globals.css';
 import '../../styles/Home.module.scss';
 import Main from './Main';
@@ -14,9 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link href="fonts/AppleSDGothicNeoM.woff" rel="stylesheet" />
         <link href="fonts/AppleSDGothicNeoB.woff" rel="stylesheet" />
       </Head>
-      <NavLayout>
+      <Layout>
         <Component {...pageProps} />
-      </NavLayout>
+      </Layout>
       <Main />
     </>
   );

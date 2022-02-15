@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Main from './Main';
+import Link from 'next/link';
 // import type { GetStaticProps } from 'next';
 // import axios from 'axios';
 // import { GetCategoryData } from 'types/interface';
