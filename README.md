@@ -12,26 +12,6 @@
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
-### 📝 입력창
-
-- [x] 엔터키 전송
-- [x] 입력내용 유효성검사
-- [ ] 입력내용 멀티라인 처리
-
-### 📮 대화목록
-
-- [x] 채팅 최신순정렬
-- [x] 채팅 생성일자 표시
-- [x] 채팅 추가기능
-- [x] 채팅 삭제기능
-- [ ] 채팅 답장기능
-- [ ] 채팅 스크롤기능
-
-### 🔐 로그인
-
-- [x] 인풋창 유효성 검사
-- [x] 유저 email, 닉네임 이미지 전역상태관리
-
 ## 배포 링크
 
 <a href="https://22-1-duble-c-h949sf0ji-dududweb.vercel.app/">배포 링크</a>
