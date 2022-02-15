@@ -6,7 +6,7 @@
       "pages/*": ["src/pages/*"],
       "styles/*": ["styles/*"],
       "hooks/*": ["src/hooks/*"],
-      "asset/icon": ["icon/*"],
+      "icon": ["public/icon/"],
       "types/*": ["src/types/*"]
     },
     "target": "es5",

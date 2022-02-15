@@ -1,5 +1,9 @@
+export interface ChildrenProps {
+  children: JSX.Element;
+}
+
 export interface GetCategoryData {
-  conCategory1s: ConCategory1[];
+  data?: ConCategory1[];
 }
 
 export interface ConCategory1 {
