@@ -34,17 +34,15 @@ There are many great README templates available on GitHub; however, I didn't fin
 
 ## 배포 링크
 
-<a href="https://nostalgic-wilson-ae40e3.netlify.app/">배포 링크</a>
+<a href="https://22-1-duble-c-h949sf0ji-dududweb.vercel.app/">배포 링크</a>
 
 ## 개발 인원 및 기간
 
-### 개발기간: 2022/2/10~2022/2/12
+### 개발기간: 2022/2/14 ~ 2022/2/16
 
-### 개발 인원: 프론트 4명
+### 개발 인원: 프론트 2명
 
-- <a href="https://github.com/wogh09">김재호</a>
 - <a href="https://github.com/Moro-yong">김태영</a>
-- <a href="https://github.com/dnjstd">원소연</a>
 - <a href="https://github.com/dududweb">황주영</a>
   <br/><br/>
 
@@ -52,22 +50,15 @@ There are many great README templates available on GitHub; however, I didn't fin
 
 ### 적용 기술
 
-- Front-End: React.js, React Router, Styled-Component, Redux
-- Common: netlify
+- Front-End: Next.js, Sass
 
 ### 소통 툴
 
-- Git, Github, Slack, Discord, <a href="https://olive-trapezoid-dec.notion.site/4-Swit-e7c4a7f8bf2e4cf09ea9c1267f0c5d02">Notion</a>
+- Git, Github, Slack, Discord
 
 <br/><br/>
 
 ## 역할
-
-- [`김재호`]
-
-  - 헤더 레이아웃 구현
-  - 답장기능 레이아웃 작성
-  - 답장 컴포넌트 조건부 랜더링으로 실행 및 userName과 Date 정보 출력
 
 - [`김태영`]
 
@@ -81,12 +72,6 @@ There are many great README templates available on GitHub; however, I didn't fin
   - redux:
     - message 추가, 삭제 reducer, action, store
 
-- [`원소연`]
-
-  - 채팅창 레이아웃 구현
-  - mock data 데이터 바인딩
-  - redux를 활용하여 삭제 로직 초안작성
-
 - [`황주영`]
 
   - 로그인 페이지 레이아웃 구현, 유효성 검사처리.
@@ -95,17 +80,9 @@ There are many great README templates available on GitHub; however, I didn't fin
 
 ## 프로젝트 회고
 
-- [`김재호`]
-
-  -이런 프로젝트에 Redux를 작게나마 활용 해보며 어떻게 전역 상태 관리를 하는지와 Redux 의 단점과 장점을 공부하고 느끼며 전역 상태 관리의 필요성을 꺠달았습니다. 처음 적용해보며 쉽지않았지만 문제해결 능력이 또 한번 높아진것 같아 뿌듯합니다.
-
 - [`김태영`]
 
   - porps를 여러번 내려줄 때마다 전역상태 관리의 필요성을 느꼈고 이번 프로젝트에서 redux를 사용했습니다. 처음 사용하는 것이라 팀원 모두가 미숙하지만 한번 만들고 사용하게 되니 뎁스가 깊어도 쉽게 불러올 수 있고 컴포넌트 리렌더링이 적어서 redux를 알아갈수록 선녀처럼 보입니다. 새로운 기술을 배우는 것이 어렵지만 왜 이러한 기술이 생기고 사용되는지를 알아갈 수 있는 경험이었습니다.
-
-- [`원소연`]
-
-  - 메신저 구현 프로젝트에 redux를 처음으로 활용해볼 수 있었습니다. 저에겐 장벽이 느껴졌던 라이브러리인데, 이번 기회에 전역 상태 관리란 무엇인지 직접 기능을 구현하며 이해할 수 있었습니다.
 
 - [`황주영`]
 
