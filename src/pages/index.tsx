@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import Nav from 'components/nav/Nav';
 import axios from 'axios';
-import { ConCategory } from 'types/interface';
 import BrandCard from 'components/store/brandCard/index';
 import styles from 'styles/Home.module.scss';
 
 const Home: NextPage = () => {
-  const [categoriesData, setCategoriesData] = useState<ConCategory[]>([]);
+  const NEXT_URL = '/brand/';
+  const [categoriesData, setCategoriesData] = useState([]);
   useEffect(() => {
     axios('https://api2.ncnc.app/con-category1s')
       .then(res => setCategoriesData(res.data.conCategory1s))
@@ -24,7 +23,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <BrandCard data={categoriesData} />
+      <BrandCard data={categoriesData} NEXT_URL={NEXT_URL} />
     </div>
   );
 };
