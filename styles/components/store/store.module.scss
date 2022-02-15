@@ -1,0 +1,13 @@
+@import './variables.module';
+
+.storeSection {
+  height: 100vh;
+  background: #f1f3f4;
+}
+.count {
+  display: flex;
+  align-items: center;
+  height: 39px;
+  padding: 0 17px;
+  border-top: 1px solid #c4c4c4;
+}
