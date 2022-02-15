@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2px;
-  margin: $marginCenter;
+  margin: 17px auto 0;
 }
 .storeCard {
   display: flex;
@@ -18,10 +18,12 @@
   background: white;
   margin: 1px;
 }
+
 .storeLogo {
   width: 36px;
   height: 36px;
 }
+
 .storeName {
   margin-top: 15px;
 }
