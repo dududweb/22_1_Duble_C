@@ -1,10 +1,18 @@
+import { useState, useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Main from './Main';
 import Link from 'next/link';
 import Nav from 'components/nav/Nav';
+import axios from 'axios';
 
 const Home: NextPage = () => {
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    axios('https://api2.ncnc.app/con-category1s')
+      .then(res => setCategories(res))
+      .catch(err => console.log(err));
+  }, []);
+
   return (
     <div className="main">
       <Head>
@@ -13,7 +21,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <Main />
     </div>
   );
 };
