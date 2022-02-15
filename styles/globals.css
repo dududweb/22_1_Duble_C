@@ -129,6 +129,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
 
 @font-face {
   font-family: 'Apple SD Gothic Neo';

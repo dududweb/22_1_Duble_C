@@ -17,7 +17,7 @@ function Storeheader() {
       </div>
       <header className={styles.header}>
         <button className={styles.backButton}>
-          <img src="/images/icon/back.svg" alt="뒤로가기 버튼" />
+          <img src="/images/icon/back.png" alt="뒤로가기 버튼" />
         </button>
         <h2 className={styles.title}>카페</h2>
       </header>
