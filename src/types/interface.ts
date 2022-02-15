@@ -3,10 +3,10 @@ export interface ChildrenProps {
 }
 
 export interface GetCategoryData {
-  data?: ConCategory1[];
+  categoriesData?: ConCategory[];
 }
 
-export interface ConCategory1 {
+export interface ConCategory {
   id: number;
   name: string;
   discountRate: number;

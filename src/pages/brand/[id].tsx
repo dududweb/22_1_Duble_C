@@ -10,7 +10,7 @@ function Brnad() {
       <Storeheader />
       <BrandSort />
       <section className={styles.storeSection}>
-        <BrandCard />
+        <BrandCard data="" />
       </section>
     </div>
   );
