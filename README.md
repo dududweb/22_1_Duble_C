@@ -6,7 +6,7 @@
 
 ## 배포 링크
 
-<a href="https://22-1-duble-c-h949sf0ji-dududweb.vercel.app/">배포 링크</a>
+<a href="https://22-1-duble-c.vercel.app/">배포 링크</a>
 
 ## 개발 인원 및 기간
 
