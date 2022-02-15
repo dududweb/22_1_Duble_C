@@ -6,6 +6,7 @@ import Nav from 'components/nav/Nav';
 import axios from 'axios';
 import { ConCategory } from 'types/interface';
 import BrandCard from 'components/store/brandCard/index';
+import Slider from 'components/slider/index';
 import styles from 'styles/Home.module.scss';
 
 const Home: NextPage = () => {
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
+      <Slider />
       <BrandCard data={categoriesData} />
       <div className={styles.eventTag}>
         <h3 className={styles.titleTag}>놓치지 마세요.</h3>
