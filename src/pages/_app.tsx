@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from 'components/Layout';
 import '../../styles/globals.css';
 import '../../styles/Home.module.scss';
+import Main from './Main';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Main />
     </>
   );
 }
