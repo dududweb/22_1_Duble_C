@@ -1,22 +1,16 @@
 import React from 'react';
 import styles from 'styles/components/store/brandCard.module.scss';
 import Link from 'next/link';
-import { ConCategory } from 'types/interface';
-import { useRouter } from 'next/router';
+import { dataProps } from '../../../types/interface';
 
-interface dataProps {
-  data: ConCategory[];
-}
-
-function BrandCard({ data }: dataProps) {
-  const router = useRouter();
-  console.log(router);
+function BrandCard(props: dataProps) {
+  const { data, NEXT_URL } = props;
   return (
     <div className={styles.storeContainer}>
-      {data?.map(list => {
+      {data.map(list => {
         const { id, name, imageUrl } = list;
         return (
-          <Link href="" as="" key={id}>
+          <Link href={NEXT_URL + id} key={id}>
             <a className={styles.storeCard}>
               <img
                 className={styles.storeLogo}
