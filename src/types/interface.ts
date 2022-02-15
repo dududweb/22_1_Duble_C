@@ -8,3 +8,7 @@ export interface ConCategory1 {
   discountRate: number;
   imageUrl: string;
 }
+
+export interface layOutPropsType {
+  children: React.ReactNode;
+}

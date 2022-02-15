@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from 'styles/components/store/brandCard.module.scss';
+import Link from 'next/link';
+import axios from 'axios';
 
 const ARR = [
   {
@@ -65,10 +67,12 @@ function BrandCard() {
       {ARR.map(list => {
         const { id, name, img } = list;
         return (
-          <div className={styles.storeCard} key={id}>
-            <img className={styles.storeLogo} src={img} alt={`${name}logo`} />
-            <p className={styles.storeName}>{name}</p>
-          </div>
+          <Link href="/" key={id}>
+            <a className={styles.storeCard}>
+              <img className={styles.storeLogo} src={img} alt={`${name}logo`} />
+              <p className={styles.storeName}>{name}</p>
+            </a>
+          </Link>
         );
       })}
     </div>

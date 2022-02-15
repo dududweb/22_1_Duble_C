@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from 'styles/components/store/store.module.scss';
-import Storeheader from './storeheader/Index';
-import BrandSort from './brandSort/index';
-import BrandCard from './brandCard/index';
+import Storeheader from '../../components/store/storeheader/Index';
+import BrandSort from '../../components/store/brandSort/index';
+import BrandCard from '../../components/store/brandCard/index';
 
-function Cafe() {
+function Brnad() {
   return (
     <div>
       <Storeheader />
@@ -16,4 +16,4 @@ function Cafe() {
   );
 }
 
-export default Cafe;
+export default Brnad;

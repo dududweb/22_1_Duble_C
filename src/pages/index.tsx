@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Nav from 'components/nav/index';
 import Main from './Main';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +13,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
+      <Link href="/brand/1">
+        <a>브랜드</a>
+      </Link>
+      <Link href="/brand/1">
+        <a>브랜드</a>
+      </Link>
       <Main />
     </div>
   );
