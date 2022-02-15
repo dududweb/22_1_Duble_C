@@ -1,23 +1,20 @@
-import React from 'react';
+import type { GetStaticProps } from 'next';
+import axios from 'axios';
+import { GetCategoryData } from 'types';
 
-type MainProps = {
-  list: {}[];
+const Main = ({ conCategory1s }: GetCategoryData) => {
+  console.log(conCategory1s);
+  return <div className="main">메인페이지데이터체크</div>;
 };
 
-function Main({ list }: MainProps) {
-  console.log(list);
-  return <div>Main</div>;
-}
-
-export default Main;
-
-export const getServerSideProps = async () => {
-  const res = await fetch('https://api2.ncnc.app/con-category1s');
-  const list = await res.json();
+export const getStaticProps: GetStaticProps = async () => {
+  const conCategory1s = await axios('https://api2.ncnc.app/con-category1s');
 
   return {
     props: {
-      list,
+      conCategory1s,
     },
   };
 };
+
+export default Main;
