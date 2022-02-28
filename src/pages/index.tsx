@@ -1,13 +1,29 @@
 import { useState, useEffect } from 'react';
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Nav from 'components/nav/Nav';
 import axios from 'axios';
 import BrandCard from 'components/store/brandCard/index';
 import Slider from 'components/slider/index';
 import styles from 'styles/Home.module.scss';
+import { API } from 'constants/api';
+import { GetCategoryData } from 'types/interface';
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await axios(API.MAIN_CATEGORIES);
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+interface HomeProps {
+  data: GetCategoryData;
+}
+
+const Home: NextPage<HomeProps> = ({ data }) => {
+  console.log(data);
   const NEXT_URL = '/brand/';
   const [categoriesData, setCategoriesData] = useState([]);
   useEffect(() => {
