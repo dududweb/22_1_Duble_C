@@ -8,7 +8,7 @@ function Slider() {
       <ul className={styles.slideWrap}>
         {SLIDER_DATA.map(items => {
           return (
-            <li className={styles.slideList}>
+            <li className={styles.slideList} key={items.id}>
               <img
                 className={styles.slideItems}
                 src={items.imageUrl}

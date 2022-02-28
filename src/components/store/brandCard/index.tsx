@@ -1,23 +1,26 @@
 import React from 'react';
 import styles from 'styles/components/store/brandCard.module.scss';
 import Link from 'next/link';
-import { dataProps } from '../../../types/interface';
+import { ConCategory } from 'types/interface';
 
-function BrandCard(props: dataProps) {
-  const { data, NEXT_URL } = props;
+interface CardProps {
+  data: ConCategory[];
+  NEXT_URL: string;
+}
+
+function BrandCard({ data, NEXT_URL }: CardProps) {
   return (
     <div className={styles.storeContainer}>
       {data.map(list => {
-        const { id, name, imageUrl } = list;
         return (
-          <Link href={NEXT_URL + id} key={id}>
+          <Link href={NEXT_URL + list.id} key={list.id}>
             <a className={styles.storeCard}>
               <img
                 className={styles.storeLogo}
-                src={imageUrl}
-                alt={`${name}logo`}
+                src={list.imageUrl}
+                alt={`${list.name}logo`}
               />
-              <p className={styles.storeName}>{name}</p>
+              <p className={styles.storeName}>{list.name}</p>
             </a>
           </Link>
         );

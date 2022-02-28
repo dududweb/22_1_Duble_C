@@ -3,7 +3,7 @@ export interface ChildrenProps {
 }
 
 export interface GetCategoryData {
-  categoriesData?: ConCategory[];
+  categoriesData: ConCategory[];
 }
 
 export interface ConCategory {

@@ -7,30 +7,24 @@ import BrandCard from 'components/store/brandCard/index';
 import Slider from 'components/slider/index';
 import styles from 'styles/Home.module.scss';
 import { API } from 'constants/api';
-import { GetCategoryData } from 'types/interface';
+import { ConCategory } from 'types/interface';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await axios(API.MAIN_CATEGORIES);
+  const { data } = await axios(API.MAIN_CATEGORIES);
   return {
     props: {
-      data,
+      categoryLists: data.conCategory1s,
     },
   };
 };
 
 interface HomeProps {
-  data: GetCategoryData;
+  categoryLists: ConCategory[];
 }
 
-const Home: NextPage<HomeProps> = ({ data }) => {
-  console.log(data);
+const Home: NextPage<HomeProps> = ({ categoryLists }) => {
+  console.log(categoryLists);
   const NEXT_URL = '/brand/';
-  const [categoriesData, setCategoriesData] = useState([]);
-  useEffect(() => {
-    axios('https://api2.ncnc.app/con-category1s').then(res =>
-      setCategoriesData(res.data.conCategory1s),
-    );
-  }, []);
 
   return (
     <div className={styles.main}>
@@ -41,7 +35,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       </Head>
       <Nav />
       <Slider />
-      <BrandCard data={categoriesData} NEXT_URL={NEXT_URL} />
+      <BrandCard data={categoryLists} NEXT_URL={NEXT_URL} />
       <div className={styles.eventTag}>
         <h3 className={styles.titleTag}>놓치지 마세요.</h3>
         <h2 className={styles.event}>오늘의 땡처리콘!</h2>
