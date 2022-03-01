@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from 'styles/components/store/store.module.scss';
-import Storeheader from '../../components/store/storeheader/Index';
+import Storeheader from 'components/storeheader/Index';
 
 function detailsPage() {
   return (

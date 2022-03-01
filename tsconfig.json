@@ -30,7 +30,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/pages/brand/[brandId]"
+    "src/pages/brands/[brandId]"
   ],
   "exclude": ["node_modules"]
 }

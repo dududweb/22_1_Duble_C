@@ -3,11 +3,12 @@ import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Nav from 'components/nav/Nav';
 import axios from 'axios';
-import BrandCard from 'components/store/brandCard/index';
+import GridCardList from 'components/gridCardList/index';
 import Slider from 'components/slider/index';
 import styles from 'styles/Home.module.scss';
 import { API } from 'constants/api';
 import { ConCategory } from 'types/interface';
+import { path } from 'constants/path';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await axios(API.MAIN_CATEGORIES);
@@ -24,7 +25,6 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ categoryLists }) => {
   console.log(categoryLists);
-  const NEXT_URL = '/brand/';
 
   return (
     <div className={styles.main}>
@@ -35,7 +35,7 @@ const Home: NextPage<HomeProps> = ({ categoryLists }) => {
       </Head>
       <Nav />
       <Slider />
-      <BrandCard data={categoryLists} NEXT_URL={NEXT_URL} />
+      <GridCardList data={categoryLists} path={path.brands} />
       <div className={styles.eventTag}>
         <h3 className={styles.titleTag}>놓치지 마세요.</h3>
         <h2 className={styles.event}>오늘의 땡처리콘!</h2>

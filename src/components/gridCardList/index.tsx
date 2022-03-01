@@ -5,15 +5,15 @@ import { ConCategory } from 'types/interface';
 
 interface CardProps {
   data: ConCategory[];
-  NEXT_URL: string;
+  path: string;
 }
 
-function BrandCard({ data, NEXT_URL }: CardProps) {
+function GridCardList({ data, path }: CardProps) {
   return (
     <div className={styles.storeContainer}>
       {data.map(list => {
         return (
-          <Link href={NEXT_URL + list.id} key={list.id}>
+          <Link href={`${path}${list.id}`} key={list.id}>
             <a className={styles.storeCard}>
               <img
                 className={styles.storeLogo}
@@ -29,4 +29,4 @@ function BrandCard({ data, NEXT_URL }: CardProps) {
   );
 }
 
-export default BrandCard;
+export default GridCardList;
