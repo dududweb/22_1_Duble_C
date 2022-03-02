@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import type { GetStaticProps, NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import styles from 'styles/components/store/store.module.scss';
 import Storeheader from 'components//storeheader/Index';
 import BrandSort from 'components/brandSort/index';
@@ -9,25 +9,42 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { API } from 'constants/api';
 
-export const getStaticProps: GetStaticProps = async (context: any) => {
-  const { router } = context.query.id;
-  const { data } = await axios(`${API.MAIN_CATEGORIES}${router}/nested`);
+export const getServerSideProps: GetServerSideProps = async (context: any) => {
+  const id = context.query.id;
+
+  const res1 = await axios(`${API.MAIN_CATEGORIES}`);
+  const categoriesData = res1.data;
+  const conCategoriesData = categoriesData.conCategory1s;
+
+  const res2 = await axios(`${API.MAIN_CATEGORIES}${id}/nested`);
+
+  const categoryData = res2.data;
+  const conCategoryData = categoryData.conCategory1.conCategory2s;
+
   return {
     props: {
-      categoryLists: data.conCategory1s,
+      conCategoriesData,
+      conCategoryData,
     },
   };
 };
 
-function Brands() {
+interface BrandsProps {
+  conCategoriesData: any;
+  conCategoryData: any;
+}
+
+function Brands({ conCategoriesData, conCategoryData }: BrandsProps) {
+  console.log('conCategoriesData', conCategoriesData);
+  console.log('conCategoryData', conCategoryData);
   const router = useRouter();
-  const { id } = router.query;
-  const NEXT_URL = `/brand/${id}/list/`;
+  const routerUrl = router.query.id;
+  const NEXT_URL = `/brand/${routerUrl}/list/`;
 
   const [filterBrand, setFilterBrand] = useState([]);
   useEffect(() => {
-    axios(`https://api2.ncnc.app/con-category1s/${id}/nested`).then(res =>
-      setFilterBrand(res.data.conCategory1.conCategory2s),
+    axios(`https://api2.ncnc.app/con-category1s/${routerUrl}/nested`).then(
+      res => setFilterBrand(res.data.conCategory1.conCategory2s),
     );
   }, []);
 
