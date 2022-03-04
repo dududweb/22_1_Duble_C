@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import Nav from 'components/nav/Nav';
+import Nav from 'components/Nav/Nav';
 import axios from 'axios';
-import GridCardList from 'components/gridCardList/index';
-import Slider from 'components/slider/index';
+import GridCardList from 'components/GridCardList/index';
+import Slider from 'components/Slider/index';
 import styles from 'styles/Home.module.scss';
 import { API } from 'constants/api';
 import { ConCategory } from 'types/interface';

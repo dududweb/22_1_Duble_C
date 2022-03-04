@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from 'styles/components/store/productCard.module.scss';
+import { ConItem } from 'types/productOfBrands';
 
-// interface ProductCardProps {
-//   conCategoryData: any;
-//   id: string | string[];
-// }
+interface ProductCardProps {
+  data: ConItem;
+}
 
-function ProductsCard() {
+function ProductsCard({ data }: ProductCardProps) {
+  console.log(data);
   return (
     <section className={styles.itemContainer}>
       <div className={styles.itemImage}>
