@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from 'styles/components/store/store.module.scss';
-import ProductsCard from 'components/ProductCardList';
+import ProductsCardList from 'components/ProductCardList';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
 import axios from 'axios';
@@ -31,7 +31,7 @@ function ProductList({ conCategoryData }: ProductListProps) {
     <div>
       <div className={styles.count}>00개의 상품</div>
       <section className={styles.storeSection}>
-        {conCategoryData && <ProductsCard data={conCategoryData} />}
+        {conCategoryData && <ProductsCardList data={conCategoryData} />}
       </section>
     </div>
   );

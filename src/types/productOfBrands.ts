@@ -4,11 +4,11 @@ export interface ConItem {
   originalPrice: number;
   minSellingPrice: number;
   ncSellingPrice: number;
-  information: any;
-  tip: any;
-  warning: any;
+  information?: any;
+  tip?: any;
+  warning?: any;
   discountRate: number;
-  info: any;
+  info?: any;
   isOnlyAccount: number;
   conCategory2Id: number;
   imageUrl: string;

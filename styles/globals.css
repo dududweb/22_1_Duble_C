@@ -165,3 +165,7 @@ body {
   font-style: normal;
   font-size: 15px;
 }
+
+img {
+  width: 100%;
+}

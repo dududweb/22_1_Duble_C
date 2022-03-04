@@ -1,28 +1,37 @@
 import React from 'react';
 import styles from 'styles/components/store/productCard.module.scss';
 import { ConItem } from 'types/productOfBrands';
+import ProductCard from 'components/ProductCard';
 
-interface ProductCardProps {
-  data: ConItem;
+interface ProductCardListProps {
+  data: ConItem[];
 }
 
-function ProductsCard({ data }: ProductCardProps) {
+function ProductsCardList({ data }: ProductCardListProps) {
   console.log(data);
   return (
-    <section className={styles.itemContainer}>
-      <div className={styles.itemImage}>
-        <img src="/images/icon/Back.svg" alt="img" />
-      </div>
-      <div>
-        <div className={styles.productName}>카페아메리카노T</div>
-        <div>
-          <span className={styles.sales}>20%</span>
-          <span className={styles.price}>10,000원</span>
-          <span className={styles.disablePrice}>12,000원</span>
-        </div>
-      </div>
-    </section>
+    <div className={styles.itemContainer}>
+      {data.map(productList => {
+        return (
+          <ProductCard
+            id={productList.id}
+            name={productList.name}
+            discountRate={productList.discountRate}
+            originalPrice={productList.originalPrice}
+            minSellingPrice={productList.minSellingPrice}
+            ncSellingPrice={productList.ncSellingPrice}
+            conCategory2Id={productList.conCategory2Id}
+            tip={productList.tip}
+            information={productList.information}
+            info={productList.info}
+            warning={productList.warning}
+            isOnlyAccount={productList.isOnlyAccount}
+            imageUrl={productList.imageUrl}
+          />
+        );
+      })}
+    </div>
   );
 }
 
-export default ProductsCard;
+export default ProductsCardList;

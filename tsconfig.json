@@ -26,6 +26,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/brands/[id]"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/Brands/[id]"],
   "exclude": ["node_modules"]
 }
