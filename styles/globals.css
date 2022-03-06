@@ -164,8 +164,13 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 15px;
+  background: rgb(221, 221, 221);
 }
 
 img {
   width: 100%;
+}
+
+.app_layout {
+  margin: 0 auto;
 }

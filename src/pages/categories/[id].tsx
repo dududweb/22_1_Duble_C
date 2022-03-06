@@ -39,13 +39,13 @@ function Categories({ conCategoryData, categoryLists }: BrandsProps) {
   console.log('findCategoryName', findCategoryName);
 
   return (
-    <div>
+    <>
       <StoreHeader title={findCategoryName.name} />
       <BrandSort />
       <section className={styles.storeSection}>
         <GridCardList data={conCategoryData} path={path.brands} />
       </section>
-    </div>
+    </>
   );
 }
 
