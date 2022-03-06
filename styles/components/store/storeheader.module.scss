@@ -1,35 +1,53 @@
-.time {
-}
-
-.location {
-}
-
-.signal {
-}
-
-.wifi {
-}
-
-.battery {
-}
-
 .header {
+  position: fixed;
+  top: 0px;
+  z-index: 50;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  height: 59px;
+  background-color: #fff;
   align-items: center;
-  margin: 50px 20px 17px;
-}
 
-.backButton {
-  border: none;
-  background: none;
-  width: 22px;
-  height: 22px;
-}
+  .leftBox {
+    flex: 1 1 0%;
+    display: flex;
+    min-width: 90px;
 
-.title {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  flex: 2;
+    .backButton {
+      border: none;
+      background: none;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+    flex: 3 1 0%;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .rightBox {
+    flex: 1 1 0%;
+    display: flex;
+    min-width: 90px;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+
+    .rightButton {
+      width: 58px;
+      height: 58px;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
 }

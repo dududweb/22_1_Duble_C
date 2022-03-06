@@ -9,22 +9,16 @@ function StoreHeader({ title }: StoreHeaderProps) {
   console.log(title);
   return (
     <div>
-      <div>
-        <div>
-          <div className={styles.time}></div>
-          <div className={styles.location}></div>
-        </div>
-        <div>
-          <div className={styles.signal}></div>
-          <div className={styles.wifi}></div>
-          <div className={styles.battery}></div>
-        </div>
-      </div>
       <header className={styles.header}>
-        <button className={styles.backButton}>
-          <img src="/images/icon/Back.png" alt="뒤로가기 버튼" />
-        </button>
+        <div className={styles.leftBox}>
+          <button className={styles.backButton}>
+            <img src="/images/icon/Back.png" alt="뒤로가기 버튼" />
+          </button>
+        </div>
         <h2 className={styles.title}>{title ? title : '니콘내콘'}</h2>
+        <div className={styles.rightBox}>
+          <button className={styles.rightButton}></button>
+        </div>
       </header>
     </div>
   );
