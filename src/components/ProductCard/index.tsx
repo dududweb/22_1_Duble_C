@@ -24,9 +24,9 @@ function ProductCard({
       <div className={styles.itemText}>
         <div className={styles.productName}>{name}</div>
         <div>
-          <span className={styles.sales}>{discountRate}</span>
-          <span className={styles.price}>세일가 10,000원</span>
-          <span className={styles.disablePrice}>원가 원</span>
+          <span className={styles.sales}>{discountRate}%</span>
+          <span className={styles.price}>{minSellingPrice}원</span>
+          <span className={styles.disablePrice}>{originalPrice}원</span>
         </div>
       </div>
     </div>

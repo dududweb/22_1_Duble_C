@@ -1,46 +1,46 @@
 import React from 'react';
-import axios from 'axios';
-import type { GetServerSideProps, NextPage } from 'next';
 import styles from 'styles/components/store/store.module.scss';
-import Storeheader from 'components/StoreHeader/Index';
-import BrandSort from 'components/BrandSort/index';
-import GridCardList from 'components/GridCardList/index';
+import ProductsCardList from 'components/ProductCardList';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
-import { path } from 'constants/path';
+import axios from 'axios';
+import type { GetServerSideProps, NextPage } from 'next';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
-  const res2 = await axios(`${API.MAIN_CATEGORIES}/${id}/nested`);
+  const res = await axios(`${API.PRODUCT_OF_BRANDS}?conCategory2Id=${id}`);
+  const res2 = await axios(`${API.BRAND_NAME}/70`);
 
-  const categoryData = res2.data;
-  const conCategoryData = categoryData.conCategory1.conCategory2s;
+  const categoryData = res.data;
+  const conCategoryData = categoryData.conItems;
+  const data = res2;
+  const brandName = data;
 
   return {
     props: {
       conCategoryData,
+      brandName,
     },
   };
 };
 
-interface BrandsProps {
+interface ProductListProps {
   conCategoryData: any;
+  brandName: any;
 }
 
-function Brands({ conCategoryData }: BrandsProps) {
-  console.log('conCategoryData', conCategoryData);
-  const router = useRouter();
-  const routerUrl = router.query.id;
+function ProductList({ conCategoryData }: ProductListProps) {
+  console.log(conCategoryData);
+  // console.log('brandName', brandName);
 
   return (
     <div>
-      <Storeheader />
-      <BrandSort />
+      <div className={styles.count}>00개의 상품</div>
       <section className={styles.storeSection}>
-        <GridCardList data={conCategoryData} path={path.productListsOfBrands} />
+        {conCategoryData && <ProductsCardList data={conCategoryData} />}
       </section>
     </div>
   );
 }
 
-export default Brands;
+export default ProductList;

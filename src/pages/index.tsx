@@ -35,7 +35,7 @@ const Home: NextPage<HomeProps> = ({ categoryLists }) => {
       </Head>
       <Nav />
       <Slider />
-      <GridCardList data={categoryLists} path={path.brands} />
+      <GridCardList data={categoryLists} path={path.categories} />
       <div className={styles.eventTag}>
         <h3 className={styles.titleTag}>놓치지 마세요.</h3>
         <h2 className={styles.event}>오늘의 땡처리콘!</h2>
