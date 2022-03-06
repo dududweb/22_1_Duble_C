@@ -15,6 +15,7 @@ function ProductsCardList({ data }: ProductCardListProps) {
         return (
           <ProductCard
             id={productList.id}
+            key={productList.id}
             name={productList.name}
             discountRate={productList.discountRate}
             originalPrice={productList.originalPrice}
