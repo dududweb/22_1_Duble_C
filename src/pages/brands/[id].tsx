@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from 'styles/components/store/store.module.scss';
 import ProductsCardList from 'components/ProductCardList';
+import StoreHeader from 'components/StoreHeader';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
 import axios from 'axios';
@@ -13,29 +14,30 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 
   const categoryData = res.data;
   const conCategoryData = categoryData.conItems;
-  const brandNameData = res2.data;
-  const brandName = brandNameData.conCategory2;
+  const brandInfoData = res2.data;
+  const brandInfo = brandInfoData.conCategory2;
 
   return {
     props: {
       conCategoryData,
-      brandName,
+      brandInfo,
     },
   };
 };
 
 interface ProductListProps {
   conCategoryData: any;
-  brandName: any;
+  brandInfo: any;
 }
 
-function ProductList({ conCategoryData, brandName }: ProductListProps) {
+function ProductList({ conCategoryData, brandInfo }: ProductListProps) {
   console.log(conCategoryData);
-  console.log('brandName', brandName);
+  console.log('brandInfo', brandInfo);
 
   return (
     <div>
-      <div className={styles.count}>00개의 상품</div>
+      <StoreHeader title={brandInfo.name} />
+      <div className={styles.count}>{conCategoryData.length}개의 상품</div>
       <section className={styles.storeSection}>
         {conCategoryData && <ProductsCardList data={conCategoryData} />}
       </section>

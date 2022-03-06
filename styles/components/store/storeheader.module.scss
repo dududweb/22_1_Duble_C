@@ -1,29 +1,35 @@
 .time {
 }
+
 .location {
 }
+
 .signal {
 }
+
 .wifi {
 }
+
 .battery {
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 50px 20px 17px;
 }
+
 .backButton {
   border: none;
   background: none;
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
 }
+
 .title {
   display: flex;
   justify-content: center;
   position: relative;
-  left: -15px;
   flex: 2;
 }

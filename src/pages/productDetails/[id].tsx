@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from 'styles/components/store/store.module.scss';
-import Storeheader from 'components/StoreHeader/Index';
+import StoreHeader from 'components/StoreHeader';
 
 function detailsPage() {
   return (
     <div>
-      <Storeheader />
-      <section className={styles.storeSection}></section>
+      <StoreHeader />
+      <section className={styles.storeSection}>디테일페이지입니다.</section>
     </div>
   );
 }

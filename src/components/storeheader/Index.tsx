@@ -1,7 +1,12 @@
 import React from 'react';
-import styles from 'styles/components/store/storeheader.module.scss';
+import styles from 'styles/components/Store/storeHeader.module.scss';
 
-function Storeheader() {
+interface StoreHeaderProps {
+  title?: string;
+}
+
+function StoreHeader({ title }: StoreHeaderProps) {
+  console.log(title);
   return (
     <div>
       <div>
@@ -19,10 +24,10 @@ function Storeheader() {
         <button className={styles.backButton}>
           <img src="/images/icon/Back.png" alt="뒤로가기 버튼" />
         </button>
-        <h2 className={styles.title}>카페</h2>
+        <h2 className={styles.title}>{title ? title : '니콘내콘'}</h2>
       </header>
     </div>
   );
 }
 
-export default Storeheader;
+export default StoreHeader;

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
 import styles from 'styles/components/store/store.module.scss';
-import Storeheader from 'components/StoreHeader/Index';
+import StoreHeader from 'components/StoreHeader';
 import BrandSort from 'components/BrandSort/index';
 import GridCardList from 'components/GridCardList/index';
 import { useRouter } from 'next/router';
@@ -11,6 +11,7 @@ import { path } from 'constants/path';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
+  const { data } = await axios(`${API.MAIN_CATEGORIES}?conCategory1Id=${id}`);
   const res2 = await axios(`${API.MAIN_CATEGORIES}/${id}/nested`);
 
   const categoryData = res2.data;
@@ -18,6 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 
   return {
     props: {
+      categoryLists: data.conCategory1s,
       conCategoryData,
     },
   };
@@ -25,16 +27,20 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 
 interface BrandsProps {
   conCategoryData: any;
+  categoryLists: any;
 }
 
-function Brands({ conCategoryData }: BrandsProps) {
+function Categories({ conCategoryData, categoryLists }: BrandsProps) {
   console.log('conCategoryData', conCategoryData);
+  console.log('name', categoryLists);
   const router = useRouter();
-  const routerUrl = router.query.id;
+  const { id } = router.query;
+  const findCategoryName = categoryLists.find((el: any) => el.id == id);
+  console.log('findCategoryName', findCategoryName);
 
   return (
     <div>
-      <Storeheader />
+      <StoreHeader title={findCategoryName.name} />
       <BrandSort />
       <section className={styles.storeSection}>
         <GridCardList data={conCategoryData} path={path.brands} />
@@ -43,4 +49,4 @@ function Brands({ conCategoryData }: BrandsProps) {
   );
 }
 
-export default Brands;
+export default Categories;
