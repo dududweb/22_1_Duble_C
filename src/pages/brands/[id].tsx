@@ -9,12 +9,12 @@ import type { GetServerSideProps, NextPage } from 'next';
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
   const res = await axios(`${API.PRODUCT_OF_BRANDS}?conCategory2Id=${id}`);
-  const res2 = await axios(`${API.BRAND_NAME}/70`);
+  const res2 = await axios(`${API.BRAND_NAME}/${id}`);
 
   const categoryData = res.data;
   const conCategoryData = categoryData.conItems;
-  const data = res2;
-  const brandName = data;
+  const brandNameData = res2.data;
+  const brandName = brandNameData.conCategory2;
 
   return {
     props: {
@@ -29,9 +29,9 @@ interface ProductListProps {
   brandName: any;
 }
 
-function ProductList({ conCategoryData }: ProductListProps) {
+function ProductList({ conCategoryData, brandName }: ProductListProps) {
   console.log(conCategoryData);
-  // console.log('brandName', brandName);
+  console.log('brandName', brandName);
 
   return (
     <div>
