@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
-import styles from 'styles/components/store/store.module.scss';
+import styles from 'styles/components/store/storeGridLayout.module.scss';
 import StoreHeader from 'components/StoreHeader';
 import BrandSort from 'components/BrandSort/index';
 import GridCardList from 'components/GridCardList/index';
