@@ -12,4 +12,5 @@ export interface ConItem {
   isOnlyAccount: number;
   conCategory2Id: number;
   imageUrl: string;
+  path: string;
 }

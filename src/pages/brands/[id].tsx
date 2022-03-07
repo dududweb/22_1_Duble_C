@@ -4,6 +4,7 @@ import ProductsCardList from 'components/ProductCardList';
 import StoreHeader from 'components/StoreHeader';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
+import { path } from 'constants/path';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
 
@@ -39,7 +40,9 @@ function ProductList({ conCategoryData, brandInfo }: ProductListProps) {
       <StoreHeader title={brandInfo.name} />
       <div className={styles.count}>{conCategoryData.length}개의 상품</div>
       <section className={styles.storeSection}>
-        {conCategoryData && <ProductsCardList data={conCategoryData} />}
+        {conCategoryData && (
+          <ProductsCardList data={conCategoryData} path={path.items} />
+        )}
       </section>
     </div>
   );

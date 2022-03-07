@@ -5,10 +5,12 @@ import ProductCard from 'components/ProductCard';
 
 interface ProductCardListProps {
   data: ConItem[];
+  path: string;
 }
 
-function ProductsCardList({ data }: ProductCardListProps) {
+function ProductsCardList({ data, path }: ProductCardListProps) {
   console.log(data);
+  console.log(path);
   return (
     <div className={styles.itemContainer}>
       {data.map(productList => {
@@ -28,6 +30,7 @@ function ProductsCardList({ data }: ProductCardListProps) {
             warning={productList.warning}
             isOnlyAccount={productList.isOnlyAccount}
             imageUrl={productList.imageUrl}
+            path={path}
           />
         );
       })}
