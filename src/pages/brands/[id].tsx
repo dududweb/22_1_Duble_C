@@ -31,7 +31,7 @@ interface ProductListProps {
   brandInfo: any;
 }
 
-function ProductList({ conCategoryData, brandInfo }: ProductListProps) {
+function Brands({ conCategoryData, brandInfo }: ProductListProps) {
   console.log(conCategoryData);
   console.log('brandInfo', brandInfo);
 
@@ -48,4 +48,4 @@ function ProductList({ conCategoryData, brandInfo }: ProductListProps) {
   );
 }
 
-export default ProductList;
+export default Brands;

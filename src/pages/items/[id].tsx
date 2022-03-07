@@ -7,11 +7,11 @@ import { API } from 'constants/api';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
-  const { data } = await axios(`${API.PRODUCT_OF_BRANDS}/${id}`);
+  const { data } = await axios(`https://api2.ncnc.app/con-items/${id}`);
 
   return {
     props: {
-      detailData: data,
+      detailData: data.conItem,
     },
   };
 };
@@ -25,7 +25,7 @@ function Items({ detailData }: ItemsProps) {
   return (
     <div>
       <StoreHeader />
-      <section className={styles.storeSection}>디테일페이지입니다.</section>
+      <section className={styles.itemsContainer}>디테일페이지입니다.</section>
     </div>
   );
 }

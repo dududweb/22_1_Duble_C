@@ -3,6 +3,5 @@ export const path = {
   categories: '/categories/',
   brands: '/brands/',
   items: '/items/',
-  productListsOfBrands: '/productLists/',
   contacts: '/contacts/',
 };
