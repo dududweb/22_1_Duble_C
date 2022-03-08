@@ -7,6 +7,7 @@ import { API } from 'constants/api';
 import ProductCard from 'components/ProductCard';
 import InfoNotice from 'components/InfoNotice';
 import Button from 'components/Button';
+import OptionContainer from 'components/OptionContainer';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
@@ -47,6 +48,10 @@ function Items({ detailData }: ItemsProps) {
         />
         <InfoNotice warningData={detailData.warning} />
         <div className={styles.buttonContainer}>
+          <OptionContainer
+            optionData={detailData.options}
+            discountRate={detailData.discountRate}
+          />
           <Button />
         </div>
       </section>

@@ -1,0 +1,56 @@
+@import 'styles/variables.module.scss';
+
+.optionContainer {
+  position: relative;
+  height: 213px;
+  overflow: scroll;
+  background-color: rgba(241, 243, 244, 1);
+
+  .header {
+    position: fixed;
+    width: 100%;
+    max-width: 672px;
+    background: rgba(241, 243, 244, 1);
+    font-size: $fontMedium;
+    font-weight: $weightRegular;
+
+    .headerTitle {
+      width: 100%;
+      padding: 16px 17px;
+    }
+  }
+
+  .optionWrap {
+    padding-top: 43px;
+
+    .optionList {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1px;
+      background: #fff;
+      padding: 14px 17px;
+
+      .optionParagraph:nth-child(2) {
+        margin-top: 6px;
+      }
+
+      .optionParagraph {
+        .optionTitle {
+          font-size: $fontSmall;
+          color: rgba(128, 128, 128, 1);
+          margin-right: 9px;
+        }
+
+        .optionValue {
+          font-size: 16px;
+        }
+      }
+
+      .discountRate {
+        font-size: 16px;
+        color: $color-primary;
+      }
+    }
+  }
+}

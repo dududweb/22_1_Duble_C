@@ -174,3 +174,7 @@ img {
 .app_layout {
   margin: 0 auto;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

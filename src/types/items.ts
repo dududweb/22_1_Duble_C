@@ -18,7 +18,13 @@ export interface Items {
   conCategory2Id: number;
   imageUrl: string;
   conCategory2: ConCategory2;
-  options: Option[];
+  options: Options[];
+}
+
+export interface Options {
+  count: number;
+  expireAt: string;
+  sellingPrice: number;
 }
 
 export interface ConCategory2 {
