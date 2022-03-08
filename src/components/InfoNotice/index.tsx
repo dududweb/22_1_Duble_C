@@ -23,7 +23,6 @@ function InfoNotice({ warningData }: InfoNoticeProps) {
       contents: list.contents.split('\n'),
     };
   });
-  console.log(워닝문구_분할완성배열);
 
   return (
     <div className={styles.infoNotice}>

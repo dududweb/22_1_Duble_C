@@ -1,11 +1,12 @@
 import React from 'react';
-import styles from 'styles/components/store/items.module.scss';
+import styles from './styles.module.scss';
 import StoreHeader from 'components/StoreHeader';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { API } from 'constants/api';
 import ProductCard from 'components/ProductCard';
 import InfoNotice from 'components/InfoNotice';
+import Button from 'components/Button';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
@@ -45,6 +46,9 @@ function Items({ detailData }: ItemsProps) {
           imageUrl={detailData.imageUrl}
         />
         <InfoNotice warningData={detailData.warning} />
+        <div className={styles.buttonContainer}>
+          <Button />
+        </div>
       </section>
     </div>
   );
