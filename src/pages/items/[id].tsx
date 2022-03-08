@@ -27,24 +27,25 @@ function Items({ detailData }: ItemsProps) {
   return (
     <div>
       <StoreHeader title=" " />
-      <section className={styles.itemsContainer}>디테일페이지입니다.</section>
-      <ProductCard
-        id={detailData.id}
-        key={detailData.id}
-        name={detailData.name}
-        discountRate={detailData.discountRate}
-        originalPrice={detailData.originalPrice}
-        minSellingPrice={detailData.minSellingPrice}
-        ncSellingPrice={detailData.ncSellingPrice}
-        conCategory2Id={detailData.conCategory2Id}
-        tip={detailData.tip}
-        information={detailData.information}
-        info={detailData.info}
-        warning={detailData.warning}
-        isOnlyAccount={detailData.isOnlyAccount}
-        imageUrl={detailData.imageUrl}
-      />
-      <InfoNotice warningData={detailData.warning} />
+      <section className={styles.itemsContainer}>
+        <ProductCard
+          id={detailData.id}
+          key={detailData.id}
+          name={detailData.name}
+          discountRate={detailData.discountRate}
+          originalPrice={detailData.originalPrice}
+          minSellingPrice={detailData.minSellingPrice}
+          ncSellingPrice={detailData.ncSellingPrice}
+          conCategory2Id={detailData.conCategory2Id}
+          tip={detailData.tip}
+          information={detailData.information}
+          info={detailData.info}
+          warning={detailData.warning}
+          isOnlyAccount={detailData.isOnlyAccount}
+          imageUrl={detailData.imageUrl}
+        />
+        <InfoNotice warningData={detailData.warning} />
+      </section>
     </div>
   );
 }
