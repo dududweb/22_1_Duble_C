@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import Nav from 'components/Nav/Nav';
+import Nav from 'components/Nav';
 import axios from 'axios';
 import GridCardList from 'components/GridCardList/index';
 import Slider from 'components/Slider/index';
