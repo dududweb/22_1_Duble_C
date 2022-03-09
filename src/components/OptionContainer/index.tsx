@@ -9,22 +9,6 @@ interface OptionContainerProps {
 }
 
 function OptionContainer({ optionData, discountRate }: OptionContainerProps) {
-  console.log('optionData', optionData);
-  const replaceDate = optionData.map(list => {
-    return list.expireAt.replaceAll('-', '.');
-  });
-  const sliceDate = replaceDate.map(list => {
-    return {
-      expireAt: list.slice(0, 10),
-    };
-  });
-
-  const 새로운배열저장 = [...optionData, ...sliceDate];
-  console.log('새로운배열저장', 새로운배열저장);
-
-  console.log(replaceDate);
-  console.log('sliceDate', sliceDate);
-
   return (
     <div className={styles.optionContainer}>
       <div className={styles.header}>
