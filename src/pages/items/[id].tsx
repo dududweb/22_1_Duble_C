@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import StoreHeader from 'components/StoreHeader';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
+import { Options } from 'types/items';
 import { API } from 'constants/api';
 import ProductCard from 'components/ProductCard';
 import InfoNotice from 'components/InfoNotice';
@@ -27,11 +28,11 @@ interface ItemsProps {
 function Items({ detailData }: ItemsProps) {
   console.log(detailData);
   const [isClickedModal, setIsClickedModal] = useState(false);
-  const [selectedOption, setSelectedOption] = useState();
+  const [selectedOption, setSelectedOption] = useState<Options>();
   const handleButton = () => {
     setIsClickedModal(!isClickedModal);
   };
-
+  console.log('selectedOption', selectedOption);
   return (
     <div>
       <StoreHeader title=" " />
@@ -58,7 +59,6 @@ function Items({ detailData }: ItemsProps) {
             <OptionContainer
               optionData={detailData.options}
               discountRate={detailData.discountRate}
-              setIsClickedModal={setIsClickedModal}
               selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
             />
