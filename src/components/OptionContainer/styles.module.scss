@@ -36,7 +36,9 @@
       }
 
       .optionParagraph {
+        display: flex;
         .optionTitle {
+          width: 50px;
           font-size: $fontSmall;
           color: rgba(128, 128, 128, 1);
           margin-right: 9px;
