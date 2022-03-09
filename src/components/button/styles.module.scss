@@ -3,8 +3,13 @@
 .button {
   width: 100%;
   height: 80px;
-  background: $color-primary;
+  background: #eee;
   color: #fff;
   padding: 23px 0 40px;
   font-size: $fontMedium;
+}
+
+.default {
+  @extend .button;
+  background: $color-primary;
 }

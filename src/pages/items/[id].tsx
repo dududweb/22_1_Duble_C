@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import StoreHeader from 'components/StoreHeader';
 import { GetServerSideProps } from 'next';
@@ -26,6 +26,12 @@ interface ItemsProps {
 
 function Items({ detailData }: ItemsProps) {
   console.log(detailData);
+  const [isClickedModal, setIsClickedModal] = useState(false);
+  const [selectedOption, setSelectedOption] = useState();
+  const handleButton = () => {
+    setIsClickedModal(!isClickedModal);
+  };
+
   return (
     <div>
       <StoreHeader title=" " />
@@ -48,11 +54,16 @@ function Items({ detailData }: ItemsProps) {
         />
         <InfoNotice warningData={detailData.warning} />
         <div className={styles.buttonContainer}>
-          <OptionContainer
-            optionData={detailData.options}
-            discountRate={detailData.discountRate}
-          />
-          <Button />
+          {isClickedModal && (
+            <OptionContainer
+              optionData={detailData.options}
+              discountRate={detailData.discountRate}
+              setIsClickedModal={setIsClickedModal}
+              selectedOption={selectedOption}
+              setSelectedOption={setSelectedOption}
+            />
+          )}
+          <Button isClickedModal={isClickedModal} onClick={handleButton} />
         </div>
       </section>
     </div>

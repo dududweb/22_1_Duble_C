@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import styles from './styles.module.scss';
 import { Options } from 'types/items';
 import OptionContents from './OptionContents';
@@ -6,9 +6,15 @@ import OptionContents from './OptionContents';
 interface OptionContainerProps {
   optionData: Options[];
   discountRate: number;
+  selectedOption: any;
+  setSelectedOption: Dispatch<SetStateAction<Options | undefined>>;
 }
 
-function OptionContainer({ optionData, discountRate }: OptionContainerProps) {
+function OptionContainer({
+  optionData,
+  discountRate,
+  setSelectedOption,
+}: OptionContainerProps) {
   return (
     <div className={styles.optionContainer}>
       <div className={styles.header}>
@@ -21,6 +27,7 @@ function OptionContainer({ optionData, discountRate }: OptionContainerProps) {
               options={options}
               key={idx}
               discountRate={discountRate}
+              setSelectedOption={setSelectedOption}
             />
           );
         })}

@@ -37,6 +37,8 @@
 
       .optionParagraph {
         display: flex;
+        align-items: center;
+
         .optionTitle {
           width: 50px;
           font-size: $fontSmall;
