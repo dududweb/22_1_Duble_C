@@ -1,8 +1,21 @@
 .itemsContainer {
+  position: relative;
+
   .buttonContainer {
     position: fixed;
     width: 100%;
     max-width: 672px;
     bottom: 0;
+  }
+
+  .overlay {
+    position: fixed;
+    max-width: 672px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.6);
   }
 }

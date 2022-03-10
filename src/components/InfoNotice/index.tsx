@@ -7,20 +7,20 @@ interface InfoNoticeProps {
 }
 
 function InfoNotice({ warningData }: InfoNoticeProps) {
-  const warningArray = warningData.split('\n\n');
-  const 워닝문구_분리 = warningArray.map(list => {
+  const warningArray = warningData?.split('\n\n');
+  const 워닝문구_분리 = warningArray?.map(list => {
     return list.split(']\n');
   });
-  const 워닝문구_대체 = 워닝문구_분리.map(list => {
+  const 워닝문구_대체 = 워닝문구_분리?.map(list => {
     return {
-      title: list[0].replace('[', ''),
-      contents: list[1].replaceAll('-', ''),
+      title: list[0]?.replace('[', ''),
+      contents: list[1]?.replaceAll('-', ''),
     };
   });
-  const 워닝문구_분할완성배열 = 워닝문구_대체.map(list => {
+  const 워닝문구_분할완성배열 = 워닝문구_대체?.map(list => {
     return {
       title: list.title,
-      contents: list.contents.split('\n'),
+      contents: list.contents?.split('\n'),
     };
   });
 

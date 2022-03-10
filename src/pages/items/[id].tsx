@@ -9,6 +9,7 @@ import ProductCard from 'components/ProductCard';
 import InfoNotice from 'components/InfoNotice';
 import Button from 'components/Button';
 import OptionContainer from 'components/OptionContainer';
+import OverlayBackground from 'components/OverlayBackground';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
@@ -30,7 +31,7 @@ function Items({ detailData }: ItemsProps) {
   const [isClickedModal, setIsClickedModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Options>();
   const handleButton = () => {
-    setIsClickedModal(!isClickedModal);
+    setIsClickedModal(true);
   };
   console.log('selectedOption', selectedOption);
   return (
@@ -54,8 +55,16 @@ function Items({ detailData }: ItemsProps) {
           imageUrl={detailData.imageUrl}
         />
         <InfoNotice warningData={detailData.warning} />
+        {isClickedModal && (
+          <div
+            className={styles.overlay}
+            onClick={() => {
+              setIsClickedModal(false);
+            }}
+          />
+        )}
         <div className={styles.buttonContainer}>
-          {isClickedModal && (
+          {!selectedOption && isClickedModal && (
             <OptionContainer
               optionData={detailData.options}
               discountRate={detailData.discountRate}
