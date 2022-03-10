@@ -30,9 +30,15 @@ function Items({ detailData }: ItemsProps) {
   console.log(detailData);
   const [isClickedModal, setIsClickedModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Options>();
+
   const handleButton = () => {
     setIsClickedModal(true);
   };
+
+  const resetSelectValue = () => {
+    setSelectedOption(undefined);
+  };
+
   console.log('selectedOption', selectedOption);
   return (
     <div>
@@ -55,7 +61,7 @@ function Items({ detailData }: ItemsProps) {
           imageUrl={detailData.imageUrl}
         />
         <InfoNotice warningData={detailData.warning} />
-        {isClickedModal && (
+        {!selectedOption && isClickedModal && (
           <div
             className={styles.overlay}
             onClick={() => {
@@ -72,7 +78,12 @@ function Items({ detailData }: ItemsProps) {
               setSelectedOption={setSelectedOption}
             />
           )}
-          <SelectedOption />
+          {selectedOption && (
+            <SelectedOption
+              selectedOption={selectedOption}
+              resetSelectValue={resetSelectValue}
+            />
+          )}
           <Button isClickedModal={isClickedModal} onClick={handleButton} />
         </div>
       </section>
