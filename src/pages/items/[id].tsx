@@ -9,7 +9,7 @@ import ProductCard from 'components/ProductCard';
 import InfoNotice from 'components/InfoNotice';
 import Button from 'components/Button';
 import OptionContainer from 'components/OptionContainer';
-import OverlayBackground from 'components/OverlayBackground';
+import SelectedOption from 'components/SelectedOption';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
@@ -72,6 +72,7 @@ function Items({ detailData }: ItemsProps) {
               setSelectedOption={setSelectedOption}
             />
           )}
+          <SelectedOption />
           <Button isClickedModal={isClickedModal} onClick={handleButton} />
         </div>
       </section>

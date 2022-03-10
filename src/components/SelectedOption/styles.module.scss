@@ -1,0 +1,22 @@
+.selecteOption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 64px;
+  padding: 17px;
+
+  .innerBox {
+    background: rgba(241, 243, 244, 1);
+    padding: 8px 17px;
+    display: flex;
+    border-radius: 5px;
+
+    span:nth-child(3) {
+      margin-left: auto;
+    }
+
+    img {
+      width: 12px;
+    }
+  }
+}
