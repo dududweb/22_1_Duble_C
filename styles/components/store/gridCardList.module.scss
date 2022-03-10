@@ -1,9 +1,10 @@
 .storeContainer {
   width: 341px;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2px;
-  margin: 17px auto 0;
+  margin: 80px auto 0;
 }
 
 .storeCard {
@@ -12,10 +13,9 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  height: 94px;
+  height: 100%;
   border-radius: 5px;
   background: white;
-  margin: 1px;
 }
 
 .storeLogo {

@@ -1,0 +1,19 @@
+.navBox {
+  position: relative;
+
+  .navList {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    white-space: nowrap;
+    max-width: 672px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background: #fff;
+    border-bottom: 1px solid #c4c4c4;
+
+    .list {
+      padding: 10px 17px;
+    }
+  }
+}
