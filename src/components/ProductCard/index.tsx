@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from 'styles/components/store/productCard.module.scss';
+import styles from './styles.module.scss';
 import { ConItem } from 'types/productOfBrands';
 
 function ProductCard({
