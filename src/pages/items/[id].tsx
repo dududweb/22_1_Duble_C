@@ -33,6 +33,9 @@ function Items({ detailData }: ItemsProps) {
 
   const handleButton = () => {
     setIsClickedModal(true);
+    if (selectedOption) {
+      alert('구매가 완료되었습니다.');
+    }
   };
 
   const resetSelectValue = () => {
@@ -84,7 +87,11 @@ function Items({ detailData }: ItemsProps) {
               resetSelectValue={resetSelectValue}
             />
           )}
-          <Button isClickedModal={isClickedModal} onClick={handleButton} />
+          <Button
+            selectedOption={selectedOption}
+            isClickedModal={isClickedModal}
+            onClick={handleButton}
+          />
         </div>
       </section>
     </div>

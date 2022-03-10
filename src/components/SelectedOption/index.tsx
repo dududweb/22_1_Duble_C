@@ -20,7 +20,7 @@ function SelectedOption({
     <div className={styles.selecteOption}>
       <div className={styles.innerBox} onClick={resetSelectValue}>
         <span className={styles.date}>{date} 까지 /</span>
-        <span className={styles.price}> {price}원</span>
+        <span className={styles.price}>&nbsp;{price}원</span>
         <span className={styles.icon}>
           <img src="/images/icon/option_edit.png" alt="옵션 편집이미지" />
         </span>
