@@ -7,7 +7,7 @@ import { Options } from 'types/items';
 import { API } from 'constants/api';
 import ProductCard from 'components/ProductCard';
 import InfoNotice from 'components/InfoNotice';
-import Button from 'components/Button';
+import CommonButton from 'components/CommonButton';
 import OptionContainer from 'components/OptionContainer';
 import SelectedOption from 'components/SelectedOption';
 
@@ -87,7 +87,7 @@ function Items({ detailData }: ItemsProps) {
               resetSelectValue={resetSelectValue}
             />
           )}
-          <Button
+          <CommonButton
             selectedOption={selectedOption}
             isClickedModal={isClickedModal}
             onClick={handleButton}
