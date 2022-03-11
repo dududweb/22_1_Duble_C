@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-interface StoreHeaderProps {
+interface PageHeaderProps {
   title?: string;
 }
 
-function StoreHeader({ title }: StoreHeaderProps) {
+function PageHeader({ title }: PageHeaderProps) {
   console.log(title);
   return (
     <header className={styles.header}>
@@ -22,4 +22,4 @@ function StoreHeader({ title }: StoreHeaderProps) {
   );
 }
 
-export default StoreHeader;
+export default PageHeader;

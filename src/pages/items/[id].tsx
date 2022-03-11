@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import StoreHeader from 'components/StoreHeader';
+import PageHeader from 'components/PageHeader';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { Options } from 'types/items';
@@ -45,7 +45,7 @@ function Items({ detailData }: ItemsProps) {
   console.log('selectedOption', selectedOption);
   return (
     <div>
-      <StoreHeader title=" " />
+      <PageHeader title=" " />
       <section className={styles.itemsContainer}>
         <ProductCard
           id={detailData.id}

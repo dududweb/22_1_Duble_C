@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from 'styles/components/store/storeGridLayout.module.scss';
 import ProductsCardList from 'components/ProductCardList';
-import StoreHeader from 'components/StoreHeader/index';
+import PageHeader from 'components/PageHeader';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
 import axios from 'axios';
@@ -36,7 +36,7 @@ function Brands({ conCategoryData, brandInfo }: ProductListProps) {
 
   return (
     <div>
-      <StoreHeader title={brandInfo.name} />
+      <PageHeader title={brandInfo.name} />
       <div className={styles.count}>{conCategoryData.length}개의 상품</div>
       <section className={styles.storeSection}>
         {conCategoryData && (

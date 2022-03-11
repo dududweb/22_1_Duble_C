@@ -8,7 +8,7 @@ import styles from 'styles/Home.module.scss';
 import { API } from 'constants/api';
 import { ConCategory } from 'types/interface';
 import { path } from 'constants/path';
-import StoreHeader from 'components/StoreHeader';
+import PageHeader from 'components/PageHeader';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await axios(API.MAIN_CATEGORIES);
@@ -34,7 +34,7 @@ const Home: NextPage<HomeProps> = ({ categoryLists }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Nav /> */}
-      <StoreHeader />
+      <PageHeader />
       <Slider />
       <GridCardList data={categoryLists} path={path.categories} />
       <div className={styles.eventTag}>

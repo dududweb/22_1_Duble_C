@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
 import styles from 'styles/components/store/storeGridLayout.module.scss';
-import StoreHeader from 'components/StoreHeader/index';
 import NavOfCategories from 'components/NavOfCategories';
+import PageHeader from 'components/PageHeader';
 import GridCardList from 'components/GridCardList';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
@@ -40,7 +40,7 @@ function Categories({ conCategoryData, categoryLists }: BrandsProps) {
 
   return (
     <>
-      <StoreHeader title={findCategoryName.name} />
+      <PageHeader title={findCategoryName.name} />
       <NavOfCategories categoryLists={categoryLists} />
       <section className={styles.storeSection}>
         <GridCardList data={conCategoryData} path={path.brands} />
