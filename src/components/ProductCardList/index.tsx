@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'styles/components/store/productCard.module.scss';
+import styles from './styles.module.scss';
 import { ConItem } from 'types/productOfBrands';
 import ProductCard from 'components/ProductCard';
 
