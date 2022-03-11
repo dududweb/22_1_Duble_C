@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'styles/components/Store/storeHeader.module.scss';
+import styles from './styles.module.scss';
 
 interface StoreHeaderProps {
   title?: string;
