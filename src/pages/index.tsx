@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import Nav from 'components/Nav';
 import axios from 'axios';
-import GridCardList from 'components/GridCardList/index';
+import GridCardList from 'components/GridCardList';
 import Slider from 'components/Slider/index';
 import styles from 'styles/Home.module.scss';
 import { API } from 'constants/api';
