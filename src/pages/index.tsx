@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import axios from 'axios';
-import GridCardList from 'components/GridCardList';
+import GridFormList from 'components/GridFormList';
 import Slider from 'components/Slider/index';
 import styles from 'styles/Home.module.scss';
 import { API } from 'constants/api';
@@ -36,7 +36,7 @@ const Home: NextPage<HomeProps> = ({ categoryLists }) => {
       {/* <Nav /> */}
       <PageHeader />
       <Slider />
-      <GridCardList data={categoryLists} path={path.categories} />
+      <GridFormList data={categoryLists} path={path.categories} />
       <div className={styles.eventTag}>
         <h3 className={styles.titleTag}>놓치지 마세요.</h3>
         <h2 className={styles.event}>오늘의 땡처리콘!</h2>

@@ -4,7 +4,7 @@ import type { GetServerSideProps, NextPage } from 'next';
 import styles from 'styles/components/store/storeGridLayout.module.scss';
 import NavOfCategories from 'components/NavOfCategories';
 import PageHeader from 'components/PageHeader';
-import GridCardList from 'components/GridCardList';
+import GridFormList from 'components/GridFormList';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
@@ -43,7 +43,7 @@ function Categories({ conCategoryData, categoryLists }: BrandsProps) {
       <PageHeader title={findCategoryName.name} />
       <NavOfCategories categoryLists={categoryLists} />
       <section className={styles.storeSection}>
-        <GridCardList data={conCategoryData} path={path.brands} />
+        <GridFormList data={conCategoryData} path={path.brands} />
       </section>
     </>
   );
