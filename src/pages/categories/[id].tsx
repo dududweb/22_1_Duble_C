@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
 import styles from 'styles/components/store/storeGridLayout.module.scss';
-import StoreHeader from 'components/StoreHeader';
+import StoreHeader from 'components/StoreHeader/index';
 import NavOfCategories from 'components/NavOfCategories';
 import GridCardList from 'components/GridCardList';
 import { useRouter } from 'next/router';
