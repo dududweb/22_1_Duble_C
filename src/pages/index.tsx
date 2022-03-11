@@ -3,7 +3,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import axios from 'axios';
 import GridFormList from 'components/GridFormList';
-import Slider from 'components/Slider/index';
+import Carousel from 'components/Carousel';
 import styles from 'styles/Home.module.scss';
 import { API } from 'constants/api';
 import { ConCategory } from 'types/interface';
@@ -35,7 +35,7 @@ const Home: NextPage<HomeProps> = ({ categoryLists }) => {
       </Head>
       {/* <Nav /> */}
       <PageHeader />
-      <Slider />
+      <Carousel />
       <GridFormList data={categoryLists} path={path.categories} />
       <div className={styles.eventTag}>
         <h3 className={styles.titleTag}>놓치지 마세요.</h3>
