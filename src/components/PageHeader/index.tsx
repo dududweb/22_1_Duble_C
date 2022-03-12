@@ -6,7 +6,6 @@ interface PageHeaderProps {
 }
 
 function PageHeader({ title }: PageHeaderProps) {
-  console.log(title);
   return (
     <header className={styles.header}>
       <div className={styles.leftBox}>

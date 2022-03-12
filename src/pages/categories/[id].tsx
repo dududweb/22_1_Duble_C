@@ -8,6 +8,7 @@ import GridFormList from 'components/GridFormList';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
+import { ConCategory } from 'types/interface';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
@@ -35,13 +36,12 @@ function Categories({ conCategoryData, categoryLists }: BrandsProps) {
   console.log('name', categoryLists);
   const router = useRouter();
   const { id } = router.query;
-  const findCategoryName = categoryLists.find((el: any) => el.id == id);
-  console.log('findCategoryName', findCategoryName);
+  const findCategoryName = categoryLists.find((el: ConCategory) => el.id == id);
 
   return (
     <>
       <PageHeader title={findCategoryName.name} />
-      <NavOfCategories categoryLists={categoryLists} />
+      <NavOfCategories categoryLists={categoryLists} urlId={id} />
       <section className={styles.storeSection}>
         <GridFormList data={conCategoryData} path={path.brands} />
       </section>

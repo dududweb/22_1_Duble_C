@@ -7,7 +7,7 @@ export interface GetCategoryData {
 }
 
 export interface ConCategory {
-  id: number;
+  id: number | string;
   name: string;
   discountRate: number;
   imageUrl: string;
