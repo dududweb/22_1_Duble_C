@@ -18,6 +18,7 @@
     .leftBox {
       flex: 1 1 0%;
       display: flex;
+      align-items: center;
       min-width: 90px;
 
       .backButton {
@@ -25,6 +26,10 @@
         background: none;
         width: 22px;
         height: 22px;
+      }
+      .menuButton {
+        width: 40px;
+        padding-top: 5px;
       }
     }
 
