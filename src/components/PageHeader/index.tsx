@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
+import Router from 'next/router';
 
 interface PageHeaderProps {
   title?: string;
@@ -10,7 +11,7 @@ function PageHeader({ title }: PageHeaderProps) {
     <header className={styles.header}>
       <div className={styles.innerHeader}>
         <div className={styles.leftBox}>
-          <button className={styles.backButton}>
+          <button className={styles.backButton} onClick={() => Router.back()}>
             <img src="/images/icon/Back.png" alt="뒤로가기 버튼" />
           </button>
         </div>

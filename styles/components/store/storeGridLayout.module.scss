@@ -1,11 +1,16 @@
+@import 'styles/variables.module.scss';
+
 .storeSection {
   background: #f1f3f4;
   padding-top: 10px;
 }
+
 .count {
   display: flex;
   align-items: center;
   height: 40px;
-  padding: 0 17px;
+  padding: 0 19px;
+  background: #fff;
+  font-size: 14px;
   border-top: 1px solid #c4c4c4;
 }
