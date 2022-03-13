@@ -13,13 +13,18 @@
     overflow-y: hidden;
     background: #fff;
 
-    .list {
-      padding: 10px 17px;
-      border-bottom: 1px solid #ccc;
-    }
+    .innerList {
+      display: flex;
+      padding: 0 10px;
 
-    .selectedMenuRed {
-      border-bottom: 1px solid $color-primary;
+      .list {
+        padding: 10px 17px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .selectedMenuRed {
+        border-bottom: 2px solid $color-primary;
+      }
     }
   }
 }

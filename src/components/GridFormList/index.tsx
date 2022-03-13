@@ -8,7 +8,7 @@ interface CardProps {
   path: string;
 }
 
-function GridCardList({ data, path }: CardProps) {
+function GridFormList({ data, path }: CardProps) {
   return (
     <div className={styles.storeContainer}>
       {data.map(list => {
@@ -31,4 +31,4 @@ function GridCardList({ data, path }: CardProps) {
   );
 }
 
-export default GridCardList;
+export default GridFormList;

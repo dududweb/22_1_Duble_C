@@ -2,12 +2,13 @@ import React from 'react';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
 import styles from 'styles/components/store/storeGridLayout.module.scss';
-import StoreHeader from 'components/StoreHeader';
 import NavOfCategories from 'components/NavOfCategories';
-import GridCardList from 'components/GridCardList';
+import PageHeader from 'components/PageHeader';
+import GridFormList from 'components/GridFormList';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
+import { ConCategory } from 'types/interface';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
@@ -35,15 +36,14 @@ function Categories({ conCategoryData, categoryLists }: BrandsProps) {
   console.log('name', categoryLists);
   const router = useRouter();
   const { id } = router.query;
-  const findCategoryName = categoryLists.find((el: any) => el.id == id);
-  console.log('findCategoryName', findCategoryName);
+  const findCategoryName = categoryLists.find((el: ConCategory) => el.id == id);
 
   return (
     <>
-      <StoreHeader title={findCategoryName.name} />
-      <NavOfCategories categoryLists={categoryLists} />
+      <PageHeader title={findCategoryName.name} />
+      <NavOfCategories categoryLists={categoryLists} urlId={id} />
       <section className={styles.storeSection}>
-        <GridCardList data={conCategoryData} path={path.brands} />
+        <GridFormList data={conCategoryData} path={path.brands} />
       </section>
     </>
   );

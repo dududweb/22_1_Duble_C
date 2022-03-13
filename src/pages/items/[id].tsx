@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import StoreHeader from 'components/StoreHeader';
+import PageHeader from 'components/PageHeader';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { Options } from 'types/items';
 import { API } from 'constants/api';
 import ProductCard from 'components/ProductCard';
 import InfoNotice from 'components/InfoNotice';
-import Button from 'components/Button';
+import CommonButton from 'components/CommonButton';
 import OptionContainer from 'components/OptionContainer';
 import SelectedOption from 'components/SelectedOption';
 
@@ -45,7 +45,7 @@ function Items({ detailData }: ItemsProps) {
   console.log('selectedOption', selectedOption);
   return (
     <div>
-      <StoreHeader title=" " />
+      <PageHeader title=" " />
       <section className={styles.itemsContainer}>
         <ProductCard
           id={detailData.id}
@@ -87,7 +87,7 @@ function Items({ detailData }: ItemsProps) {
               resetSelectValue={resetSelectValue}
             />
           )}
-          <Button
+          <CommonButton
             selectedOption={selectedOption}
             isClickedModal={isClickedModal}
             onClick={handleButton}

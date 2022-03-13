@@ -1,34 +1,39 @@
-# 🥲 더블앤씨
+# 더블엔씨 니콘내콘 모바일 웹페이지 과제
 
-# Team5 응급코딩과 🚑
-
-## 프로젝트 소개
+## 📌 프로젝트 소개
 
 중고기프티콘 플랫폼 니콘내콘을 Next.js로 구현하는 프로젝트입니다.
+<br/><br/>
 
-## 배포 링크
+## 배포링크
 
 <a href="https://22-1-duble-c.vercel.app/">배포 링크</a>
-
-## 개발 인원 및 기간
-
-### 개발기간: 2022/2/14 ~ 2022/2/16
-
-### 개발 인원: 프론트 1명
-
 <br/><br/>
 
-## 적용 기술 및 협업 툴
+## 📌 요구 사항
 
-### 적용 기술
+다음 페이지들을 클론하는 것이 이번 과제의 주된 요구사항이었습니다.
 
-- Front-End: Next.js, Sass
+- [니콘내콘 홈페이지](https://ncnc.app/)
+- [카테고리별 브랜드 페이지](https://ncnc.app/categories/67)
+- [각 브랜드당 제품 페이지](https://ncnc.app/brands/63)
+- [제품별 상세설명 페이지](https://ncnc.app/items/137)
+- 사이드 메뉴
+  <br/><br/>
 
-### 소통 툴
+## 개발 인원
 
-- Git, Github, Slack, Discord
-
+프론트 1명
 <br/><br/>
+
+## 적용 기술
+
+- Next.js
+- TypeScript
+- Sass
+- Cypress
+- Eslint, Prettier
+  <br/><br/>
 
 ## 역할
 
@@ -40,6 +45,7 @@
 - <span style="color:red">\*</span> 페이지 레이아웃 작성
 - <span style="color:red">\*</span> 동적 라우트 적용
 - <span style="color:red">\*</span> 상세페이지 옵션구성 모달, 구매처리
+  <br/><br/>
 
 ## 프로젝트 회고
 
