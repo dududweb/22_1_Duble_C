@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import PageHeader from 'components/PageHeader';
+import Link from 'next/link';
+import { path } from 'constants/path';
 
 interface SideMenuProps {
   isClickedMenu: boolean;
@@ -16,7 +18,19 @@ function SideMenu({ isClickedMenu, openMenu }: SideMenuProps) {
         isClickedMenu={isClickedMenu}
         openMenu={openMenu}
       />
-      <div>고객센터</div>
+      <div className={styles.menu}>
+        <Link href={path.contacts}>
+          <a className={styles.menuLists}>
+            <span>고객센터</span>
+            <img
+              className={styles.moveButton}
+              src="/images/icon/Back.png"
+              alt="고객센터이동"
+            />
+          </a>
+        </Link>
+      </div>
+      <div className={styles.bottomMenu}></div>
     </div>
   );
 }

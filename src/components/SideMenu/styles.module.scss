@@ -28,4 +28,29 @@
   visibility: visible;
   transition: all 0.2s ease-in-out 0s;
   transform: translateX(0vw);
+
+  .menu {
+    margin-top: 65px;
+    width: 100%;
+    background: #fff;
+
+    .menuLists {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 19px;
+      font-size: 15px;
+
+      .moveButton {
+        width: 12px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .bottomMenu {
+    height: 100vh;
+    background-color: #fff;
+    margin-top: 8px;
+  }
 }
