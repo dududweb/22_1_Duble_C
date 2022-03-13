@@ -2,7 +2,6 @@ import React from 'react';
 import styles from 'styles/components/store/storeGridLayout.module.scss';
 import ProductsCardList from 'components/ProductCardList';
 import StoreHeader from 'components/StoreHeader';
-import { useRouter } from 'next/router';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
 import axios from 'axios';
