@@ -7,26 +7,22 @@ import PageHeader from 'components/PageHeader';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
-  const res = await axios(`${API.PRODUCT_OF_BRANDS}?conCategory2Id=${id}`);
-  const res2 = await axios(`${API.BRAND_NAME}/${id}`);
+  const { data } = await axios('https://api2.ncnc.app/qa-types');
 
-  const categoryData = res.data;
-  const conCategoryData = categoryData.conItems;
-  const brandInfoData = res2.data;
-  const brandInfo = brandInfoData.conCategory2;
+  const categoryData = data.qaTypes;
 
   return {
     props: {
-      conCategoryData,
-      brandInfo,
+      categoryData,
     },
   };
 };
 
-function Contacts() {
+function Contacts({ categoryData }: any) {
+  console.log(categoryData);
   return (
     <div>
-      <PageHeader title="마이페이지" />
+      <PageHeader title="고객센터" />
       <div>test</div>
     </div>
   );

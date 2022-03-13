@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Router, { useRouter } from 'next/router';
-import SideMenu from 'components/SideMenu';
+import Link from 'next/link';
 
 interface PageHeaderProps {
   title?: string;
@@ -38,13 +38,23 @@ function PageHeader({ title, isClickedMenu, openMenu }: PageHeaderProps) {
             </button>
           ) : (
             <button className={styles.backButton} onClick={handleBackButton}>
-              <img src="/images/icon/Back.png" alt="뒤로가기 버튼" />
+              {url !== '/contacts' && (
+                <img src="/images/icon/Back.png" alt="뒤로가기 버튼" />
+              )}
             </button>
           )}
         </div>
         <h2 className={styles.title}>{title ? title : '니콘내콘'}</h2>
         <div className={styles.rightBox}>
-          <button className={styles.rightButton}></button>
+          <button className={styles.rightButton}>
+            <Link href="/">
+              <a>
+                {url === '/contacts' && (
+                  <img src="/images/icon/close.png" alt="close" />
+                )}
+              </a>
+            </Link>
+          </button>
         </div>
       </div>
     </header>
