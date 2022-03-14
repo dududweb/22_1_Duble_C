@@ -26,6 +26,7 @@ interface ContactsProps {
 }
 
 function Contacts({ qaTypes, faqData }: ContactsProps) {
+  const [selectTap, setSelectTap] = useState(1);
   const [selectAnswerData, setSelectAnswerData] = useState(faqData);
 
   const selectTapData = async (id: number) => {
@@ -35,6 +36,8 @@ function Contacts({ qaTypes, faqData }: ContactsProps) {
     } catch (error) {
       console.error(error);
     }
+
+    setSelectTap(id);
   };
 
   return (
@@ -52,7 +55,11 @@ function Contacts({ qaTypes, faqData }: ContactsProps) {
             return (
               <button
                 key={type.id}
-                className={styles.typeButton}
+                className={
+                  selectTap === type.id
+                    ? styles.typeButtonRed
+                    : styles.typeButton
+                }
                 onClick={() => selectTapData(type.id)}
               >
                 {type.name}
