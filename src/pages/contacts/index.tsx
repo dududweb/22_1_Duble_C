@@ -2,30 +2,37 @@ import React from 'react';
 import type { GetServerSideProps, NextPage } from 'next';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
-import axios from 'axios';
-import PageHeader from 'components/PageHeader';
 import styles from './styles.module.scss';
 import { FaqType } from 'types/faq';
+import axios from 'axios';
+import PageHeader from 'components/PageHeader';
+import FaqForm from 'components/FaqForm';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
   const { data } = await axios('https://api2.ncnc.app/qa-types');
+  const getFaqData = await axios('https://api2.ncnc.app/qas?qaTypeId=1');
 
   const qaTypes = data.qaTypes;
+  const faqData = getFaqData.data.qas;
 
   return {
     props: {
       qaTypes,
+      faqData,
     },
   };
 };
 
 interface ContactsProps {
   qaTypes: FaqType[];
+  faqData: any;
 }
 
-function Contacts({ qaTypes }: ContactsProps) {
+function Contacts({ qaTypes, faqData }: ContactsProps) {
   console.log(qaTypes);
+  console.log('faqData', faqData);
+
   return (
     <div className={styles.contacts}>
       <PageHeader title="고객센터" />
@@ -42,6 +49,7 @@ function Contacts({ qaTypes }: ContactsProps) {
           })}
         </div>
       </div>
+      <FaqForm faqData={faqData} />
     </div>
   );
 }
