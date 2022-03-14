@@ -32,6 +32,10 @@
       align-items: center;
       justify-content: space-between;
 
+      .faqTitle {
+        font-size: 16px;
+      }
+
       .typeButton {
         width: 50%;
         font-size: 14px;
@@ -40,7 +44,7 @@
 
       .typeButtonRed {
         @extend .typeButton;
-        border-bottom: 1px solid $color-primary;
+        border-bottom: 2px solid $color-primary;
       }
     }
   }

@@ -35,7 +35,7 @@ function Contacts({ qaTypes }: ContactsProps) {
         <p>점심시간 12:30 - 13:30 / 토 ・ 일 ・ 공휴일 휴무</p>
       </div>
       <div className={styles.faqBox}>
-        <h3>자주 묻는 질문</h3>
+        <h3 className={styles.faqTitle}>자주 묻는 질문</h3>
         <div className={styles.faqTypeBox}>
           {qaTypes.map(type => {
             return <button className={styles.typeButton}>{type.name}</button>;
