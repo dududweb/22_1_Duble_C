@@ -1,5 +1,5 @@
-import React from 'react';
-import type { GetServerSideProps, NextPage } from 'next';
+import React, { useState, useEffect } from 'react';
+import type { GetStaticProps, NextPage } from 'next';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
 import styles from './styles.module.scss';
@@ -8,10 +8,9 @@ import axios from 'axios';
 import PageHeader from 'components/PageHeader';
 import FaqForm from 'components/FaqForm';
 
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const { id } = context.query;
+export const getStaticProps: GetStaticProps = async () => {
   const { data } = await axios('https://api2.ncnc.app/qa-types');
-  const getFaqData = await axios('https://api2.ncnc.app/qas?qaTypeId=1');
+  const getFaqData = await axios(`https://api2.ncnc.app/qas?qaTypeId=1`);
 
   const qaTypes = data.qaTypes;
   const faqData = getFaqData.data.qas;
@@ -30,8 +29,18 @@ interface ContactsProps {
 }
 
 function Contacts({ qaTypes, faqData }: ContactsProps) {
-  console.log(qaTypes);
-  console.log('faqData', faqData);
+  const [selectAnswerData, setSelectAnswerData] = useState([]);
+
+  const selectTapData = async (id: number) => {
+    try {
+      const response = await axios.get(
+        `https://api2.ncnc.app/qas?qaTypeId=${id}`,
+      );
+      setSelectAnswerData(response.data.qas);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className={styles.contacts}>
@@ -45,11 +54,19 @@ function Contacts({ qaTypes, faqData }: ContactsProps) {
         <h3 className={styles.faqTitle}>자주 묻는 질문</h3>
         <div className={styles.faqTypeBox}>
           {qaTypes.map(type => {
-            return <button className={styles.typeButton}>{type.name}</button>;
+            return (
+              <button
+                key={type.id}
+                className={styles.typeButton}
+                onClick={() => selectTapData(type.id)}
+              >
+                {type.name}
+              </button>
+            );
           })}
         </div>
       </div>
-      <FaqForm faqData={faqData} />
+      <FaqForm faqData={selectAnswerData} />
     </div>
   );
 }

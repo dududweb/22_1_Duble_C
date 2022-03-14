@@ -22,12 +22,18 @@
       margin-left: auto;
       transform: rotate(-90deg);
     }
+
+    .questionsDetailViewIconOpen {
+      margin-left: auto;
+      transform: rotate(90deg);
+    }
   }
   .answerForm {
     background: #f1f3f4;
 
     .answer {
       padding: 17px 19px;
+      line-height: 140%;
     }
   }
 }
