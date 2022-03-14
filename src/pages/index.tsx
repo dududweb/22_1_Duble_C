@@ -7,24 +7,31 @@ import Carousel from 'components/Carousel';
 import styles from 'styles/Home.module.scss';
 import { API } from 'constants/api';
 import { ConCategory } from 'types/interface';
+import { ConItem } from 'types/productOfBrands';
 import { path } from 'constants/path';
 import PageHeader from 'components/PageHeader';
 import SideMenu from 'components/SideMenu';
+import ProductsCardList from 'components/ProductCardList';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await axios(API.MAIN_CATEGORIES);
+  const clearance = await axios(`${API.PRODUCT_OF_BRANDS}/soon`);
+
   return {
     props: {
       categoryLists: data.conCategory1s,
+      clearanceData: clearance.data.conItems,
     },
   };
 };
 
 interface HomeProps {
   categoryLists: ConCategory[];
+  clearanceData: ConItem[];
 }
 
-const Home: NextPage<HomeProps> = ({ categoryLists }) => {
+const Home: NextPage<HomeProps> = ({ categoryLists, clearanceData }) => {
+  console.log(clearanceData);
   const [isClickedMenu, setIsClickedMenu] = useState(false);
 
   const openMenu = () => {
@@ -48,6 +55,7 @@ const Home: NextPage<HomeProps> = ({ categoryLists }) => {
         <h3 className={styles.titleTag}>놓치지 마세요.</h3>
         <h2 className={styles.event}>오늘의 땡처리콘!</h2>
       </div>
+      <ProductsCardList data={clearanceData} path={path.items} />
     </div>
   );
 };

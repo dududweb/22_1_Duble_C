@@ -14,7 +14,7 @@ function ProductsCardList({ data, path }: ProductCardListProps) {
   console.log(path);
   return (
     <div className={styles.itemContainer}>
-      {data.map(productList => {
+      {data?.map(productList => {
         return (
           <Link href={`${path}${productList.id}`}>
             <a>
