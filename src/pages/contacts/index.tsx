@@ -36,8 +36,7 @@ function Contacts({ qaTypes, faqData }: ContactsProps) {
     } catch (error) {
       console.error(error);
     }
-
-    setSelectTap(id);
+    setSelectTap(id); // 선택시 탭 보더 색상 변경
   };
 
   return (

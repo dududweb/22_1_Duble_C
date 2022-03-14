@@ -1,28 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaqDataType } from 'types/faq';
 import styles from './styles.module.scss';
+import AnswerList from 'components/AnswerList';
+import FaqList from 'components/FaqList';
 
 interface FaqFromProps {
   selectAnswerData: FaqDataType[];
 }
 
 function FaqForm({ selectAnswerData }: FaqFromProps) {
+  const [selectQuesId, setSelectQuesId] = useState<number | null>(null);
+
+  const handleQuestion = (id: number) => {
+    setSelectQuesId(id);
+  };
+
   return (
     <div className={styles.faqForm}>
       {selectAnswerData.map(items => {
         return (
-          <>
-            <div className={styles.faqList}>
-              <span className={styles.questionsIcon}>Q.</span>
-              <span className={styles.questionsTitle}>{items.question}</span>
-              <span className={styles.questionsDetailViewIcon}>
-                <img src="/images/icon/Back.png" alt="질문 자세히보기" />
-              </span>
-            </div>
-            <div className={styles.answerForm}>
-              <p className={styles.answer}>{items.answer}</p>
-            </div>
-          </>
+          <div className={styles.faqInner}>
+            <FaqList
+              qasId={items.id}
+              question={items.question}
+              handleQuestion={handleQuestion}
+              selectQuesId={selectQuesId}
+            />
+            {selectQuesId === items.id && <AnswerList answer={items.answer} />}
+          </div>
         );
       })}
     </div>

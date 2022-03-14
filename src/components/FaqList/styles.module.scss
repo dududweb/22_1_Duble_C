@@ -1,0 +1,30 @@
+@import 'styles/variables.module.scss';
+
+.faqList {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 15px 19px;
+  margin-top: 1px;
+  cursor: pointer;
+
+  .questionsIcon {
+    color: $color-primary;
+    margin-right: 9px;
+  }
+
+  .questionsTitle {
+    padding-right: 20px;
+  }
+
+  .questionsDetailViewIcon {
+    width: 10 px;
+    margin-left: auto;
+    transform: rotate(-90deg);
+  }
+
+  .questionsDetailViewIconOpen {
+    @extend .questionsDetailViewIcon;
+    transform: rotate(90deg);
+  }
+}
