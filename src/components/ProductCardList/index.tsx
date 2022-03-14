@@ -5,7 +5,7 @@ import ProductCard from 'components/ProductCard';
 import Link from 'next/link';
 
 interface ProductCardListProps {
-  data: ConItem[];
+  data: ConItem[] | undefined;
   path: string;
 }
 
