@@ -6,6 +6,7 @@ interface FaqListProps {
   qasId: number;
   question: string;
   handleQuestion: any;
+  isSelected: number | boolean;
   selectQuesId: number | null;
 }
 
@@ -13,10 +14,11 @@ function FaqList({
   qasId,
   question,
   selectQuesId,
+  isSelected,
   handleQuestion,
 }: FaqListProps) {
   const handleTap = () => {
-    handleQuestion(selectQuesId ? null : qasId);
+    handleQuestion(isSelected ? null : qasId);
   };
 
   return (

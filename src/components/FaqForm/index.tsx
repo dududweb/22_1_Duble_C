@@ -25,6 +25,7 @@ function FaqForm({ selectAnswerData }: FaqFromProps) {
               question={items.question}
               handleQuestion={handleQuestion}
               selectQuesId={selectQuesId}
+              isSelected={items.id === selectQuesId}
             />
             {selectQuesId === items.id && <AnswerList answer={items.answer} />}
           </div>
