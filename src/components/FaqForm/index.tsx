@@ -3,14 +3,13 @@ import { FaqDataType } from 'types/faq';
 import styles from './styles.module.scss';
 
 interface FaqFromProps {
-  faqData: FaqDataType[];
+  selectAnswerData: FaqDataType[];
 }
 
-function FaqForm({ faqData }: FaqFromProps) {
-  console.log('ㅇㅁㅅㅁ', faqData);
+function FaqForm({ selectAnswerData }: FaqFromProps) {
   return (
     <div className={styles.faqForm}>
-      {faqData.map(items => {
+      {selectAnswerData.map(items => {
         return (
           <>
             <div className={styles.faqList}>

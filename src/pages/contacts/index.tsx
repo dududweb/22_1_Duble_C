@@ -3,39 +3,34 @@ import type { GetStaticProps, NextPage } from 'next';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
 import styles from './styles.module.scss';
-import { FaqType } from 'types/faq';
+import { FaqType, FaqDataType } from 'types/faq';
 import axios from 'axios';
 import PageHeader from 'components/PageHeader';
 import FaqForm from 'components/FaqForm';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axios('https://api2.ncnc.app/qa-types');
-  const getFaqData = await axios(`https://api2.ncnc.app/qas?qaTypeId=1`);
-
-  const qaTypes = data.qaTypes;
-  const faqData = getFaqData.data.qas;
+  const faqType = await axios(`${API.FAQ_TYPE}`);
+  const faqList = await axios(`${API.FAQ_DATA}?qaTypeId=1`);
 
   return {
     props: {
-      qaTypes,
-      faqData,
+      qaTypes: faqType.data.qaTypes,
+      faqData: faqList.data.qas,
     },
   };
 };
 
 interface ContactsProps {
   qaTypes: FaqType[];
-  faqData: any;
+  faqData: FaqDataType[];
 }
 
 function Contacts({ qaTypes, faqData }: ContactsProps) {
-  const [selectAnswerData, setSelectAnswerData] = useState([]);
+  const [selectAnswerData, setSelectAnswerData] = useState(faqData);
 
   const selectTapData = async (id: number) => {
     try {
-      const response = await axios.get(
-        `https://api2.ncnc.app/qas?qaTypeId=${id}`,
-      );
+      const response = await axios.get(`${API.FAQ_DATA}?qaTypeId=${id}`);
       setSelectAnswerData(response.data.qas);
     } catch (error) {
       console.error(error);
@@ -66,7 +61,7 @@ function Contacts({ qaTypes, faqData }: ContactsProps) {
           })}
         </div>
       </div>
-      <FaqForm faqData={selectAnswerData} />
+      <FaqForm selectAnswerData={selectAnswerData} />
     </div>
   );
 }
