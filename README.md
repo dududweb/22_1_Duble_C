@@ -45,6 +45,8 @@
 - <span style="color:red">\*</span> 페이지 레이아웃 작성
 - <span style="color:red">\*</span> 동적 라우트 적용
 - <span style="color:red">\*</span> 상세페이지 옵션구성 모달, 구매처리
+- <span style="color:red">\*</span> 네브바 사이드메뉴
+- <span style="color:red">\*</span> 고객센터
   <br/><br/>
 
 ## 프로젝트 회고
