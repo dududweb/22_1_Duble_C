@@ -5,11 +5,13 @@ import Indicator from 'components/Indicator';
 
 function Carousel() {
   const [currentCarousel, setCurrentCarousel] = useState<number>(1);
-  const containerWidth = 672 * SLIDER_DATA.length;
-  const moveCarousel = (px: number) => {
-    setCurrentCarousel(px === 1 ? 0 : 672 * px);
+  const initCarousel = 672;
+  const containerWidth = initCarousel * SLIDER_DATA.length;
+
+  const moveCarousel = (id: number) => {
+    setCurrentCarousel(id === 1 ? 0 : initCarousel * (id - 1));
     console.log(currentCarousel);
-    console.log(px);
+    console.log(id);
   };
 
   return (
