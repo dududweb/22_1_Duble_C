@@ -7,11 +7,8 @@ function Carousel() {
   const [currentCarousel, setCurrentCarousel] = useState<number>(1);
   const initCarousel = 672;
   const containerWidth = initCarousel * SLIDER_DATA.length;
-
   const moveCarousel = (id: number) => {
     setCurrentCarousel(id === 1 ? 0 : initCarousel * (id - 1));
-    console.log(currentCarousel);
-    console.log(id);
   };
 
   return (

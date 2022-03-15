@@ -3,12 +3,12 @@
 .slider {
   position: relative;
   width: 100%;
-  background-color: aliceblue;
   overflow: hidden;
 
   .slideWrap {
     display: flex;
-    height: 200px;
+    width: 100%;
+    height: 185px;
     transition: all 0.5s;
 
     .slideList {
