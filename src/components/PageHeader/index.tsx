@@ -28,6 +28,7 @@ function PageHeader({ title, isClickedMenu, openMenu }: PageHeaderProps) {
         <div className={styles.leftBox}>
           {url === '/' ? (
             <button
+              data-cy-menu
               className={isClickedMenu ? styles.backButton : styles.menuButton}
             >
               <img
@@ -46,7 +47,7 @@ function PageHeader({ title, isClickedMenu, openMenu }: PageHeaderProps) {
         </div>
         <h2 className={styles.title}>{title ? title : '니콘내콘'}</h2>
         <div className={styles.rightBox}>
-          <button className={styles.rightButton}>
+          <button data-cy-contacts className={styles.rightButton}>
             <Link href="/">
               <a>
                 {url === '/contacts' && (

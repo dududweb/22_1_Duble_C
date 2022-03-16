@@ -18,7 +18,7 @@ function SideMenu({ isClickedMenu, openMenu }: SideMenuProps) {
         isClickedMenu={isClickedMenu}
         openMenu={openMenu}
       />
-      <div className={styles.menu}>
+      <div data-cy-contactsMove className={styles.menu}>
         <Link href={path.contacts}>
           <a className={styles.menuLists}>
             <span>고객센터</span>
