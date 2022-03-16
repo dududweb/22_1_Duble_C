@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import { SLIDER_DATA } from './sliderData';
 import Indicator from 'components/Indicator';
+import useWindowDetect from 'hooks/useWindowDetect';
 
 function Carousel() {
   const [currentCarousel, setCurrentCarousel] = useState<number>(1);
+  const [containerWidth, setContainerWidth] = useState<number>();
   const initCarousel = 672;
-  const containerWidth = initCarousel * SLIDER_DATA.length;
+  const windowSizeDetect = useWindowDetect();
+  const resize = windowSizeDetect && windowSizeDetect * SLIDER_DATA.length;
+  useEffect(() => {
+    setContainerWidth(initCarousel * SLIDER_DATA.length);
+  }, []);
+
   const moveCarousel = (id: number) => {
-    setCurrentCarousel(id === 1 ? 0 : initCarousel * (id - 1));
+    windowSizeDetect &&
+      setCurrentCarousel(id === 1 ? 0 : windowSizeDetect * (id - 1));
   };
 
   return (
@@ -16,7 +24,11 @@ function Carousel() {
       <ul
         className={styles.slideWrap}
         style={{
-          width: `${containerWidth}px`,
+          width: `${
+            windowSizeDetect && windowSizeDetect > initCarousel
+              ? containerWidth
+              : resize
+          }px`,
           transform: `translateX(${-currentCarousel}px)`,
         }}
       >

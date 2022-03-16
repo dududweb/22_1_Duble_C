@@ -10,6 +10,7 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
+    "@cypress/webpack-preprocessor": "^5.11.1",
     "axios": "^0.26.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "lodash": "^4.17.21",
