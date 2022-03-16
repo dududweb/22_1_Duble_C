@@ -2,7 +2,7 @@ export {};
 
 describe('Home Page', () => {
   beforeEach(() => {
-    cy.visit('localhost:3000/');
+    cy.visit('/');
   });
 
   it('카테고리를 클릭했을 경우, 해당 카테고리로 이동한다', () => {
@@ -11,8 +11,8 @@ describe('Home Page', () => {
   });
 
   it('햄버거 매뉴를 클릭했을 때, 사이드바가 나온다', () => {
-    cy.get('.menuButton img').eq(0).click();
-    cy.get('section').contains('마이페이지');
+    cy.get('.menuButton img').click();
+    cy.get('div').contains('마이페이지');
   });
 
   it('사이드바에는 고객센터 메뉴가 있다.', () => {

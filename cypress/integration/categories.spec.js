@@ -1,6 +1,6 @@
 describe('Categories Page', () => {
   beforeEach(() => {
-    cy.visit('localhost:3000/');
+    cy.visit('/');
   });
 
   it('카테고리에서 땡철이를 누르면 해당 메뉴로 이동된다', () => {
