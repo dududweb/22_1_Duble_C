@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import { SLIDER_DATA } from './sliderData';
 import Indicator from 'components/Indicator';
-import useWindowDetect from 'hooks/useWindowDetect';
 
 function Carousel() {
   const [currentCarousel, setCurrentCarousel] = useState<number>(1);
-  const [containerWidth, setContainerWidth] = useState<number>(672);
+  const [containerWidth, setContainerWidth] = useState<number>(0);
   const slideCount = SLIDER_DATA.length;
 
   const moveCarousel = (id: number) => {
     setContainerWidth(id === 1 ? 0 : (100 / slideCount) * (id - 1));
+    setCurrentCarousel(id);
   };
 
   console.log(currentCarousel);
