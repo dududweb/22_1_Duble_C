@@ -6,32 +6,22 @@ import useWindowDetect from 'hooks/useWindowDetect';
 
 function Carousel() {
   const [currentCarousel, setCurrentCarousel] = useState<number>(1);
-  const [containerWidth, setContainerWidth] = useState<number>();
-  const initCarousel = 672;
-  const windowSizeDetect = useWindowDetect();
-  const resize = windowSizeDetect && windowSizeDetect * SLIDER_DATA.length;
-  useEffect(() => {
-    setContainerWidth(initCarousel * SLIDER_DATA.length);
-  }, []);
+  const [containerWidth, setContainerWidth] = useState<number>(672);
+  const slideCount = SLIDER_DATA.length;
 
   const moveCarousel = (id: number) => {
-    windowSizeDetect &&
-      setCurrentCarousel(id === 1 ? 0 : windowSizeDetect * (id - 1));
+    setContainerWidth(id === 1 ? 0 : (100 / slideCount) * (id - 1));
   };
 
   console.log(currentCarousel);
-
+  console.log(containerWidth);
   return (
     <section className={styles.slider}>
       <ul
         className={styles.slideWrap}
         style={{
-          width: `${
-            windowSizeDetect && windowSizeDetect > initCarousel
-              ? containerWidth
-              : resize
-          }px`,
-          transform: `translateX(${-currentCarousel}px)`,
+          width: `${slideCount * 100}%`,
+          transform: `translateX(${-containerWidth}%)`,
         }}
       >
         {SLIDER_DATA.map(items => {
