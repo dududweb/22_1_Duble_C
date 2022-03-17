@@ -14,3 +14,10 @@ export interface ConItem {
   imageUrl: string;
   path?: string;
 }
+
+export interface BrandInfo {
+  id: number;
+  name: string;
+  conCategory1Id: number;
+  imageUrl: string;
+}

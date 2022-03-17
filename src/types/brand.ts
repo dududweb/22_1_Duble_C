@@ -7,15 +7,14 @@ export interface BrandAndProductListConCategory1 {
   name: string;
   discountRate: number;
   imageUrl: string;
-  conCategory2s: BrandAndProductListConCategory2[];
+  conCategory2s: BrandInfo[];
 }
 
-export interface BrandAndProductListConCategory2 {
+export interface BrandInfo {
   id: number;
   name: string;
   conCategory1Id: number;
   imageUrl: string;
-  conItems: BrandAndProductListConItem[];
 }
 
 export interface BrandAndProductListConItem {

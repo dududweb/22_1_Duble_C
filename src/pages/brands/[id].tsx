@@ -4,6 +4,7 @@ import ProductsCardList from 'components/ProductCardList';
 import PageHeader from 'components/PageHeader';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
+import { ConItem, BrandInfo } from 'types/productOfBrands';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
 
@@ -26,14 +27,11 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 };
 
 interface ProductListProps {
-  conCategoryData: any;
+  conCategoryData: ConItem[];
   brandInfo: any;
 }
 
 function Brands({ conCategoryData, brandInfo }: ProductListProps) {
-  console.log(conCategoryData);
-  console.log('brandInfo', brandInfo);
-
   return (
     <div>
       <PageHeader title={brandInfo.name} />

@@ -19,6 +19,8 @@ function Carousel() {
       setCurrentCarousel(id === 1 ? 0 : windowSizeDetect * (id - 1));
   };
 
+  console.log(currentCarousel);
+
   return (
     <section className={styles.slider}>
       <ul
@@ -46,7 +48,13 @@ function Carousel() {
       </ul>
       <ul className={styles.bullet}>
         {SLIDER_DATA.map(items => {
-          return <Indicator selectId={items.id} moveCarousel={moveCarousel} />;
+          return (
+            <Indicator
+              selectId={items.id}
+              moveCarousel={moveCarousel}
+              isSelected={items.id === currentCarousel}
+            />
+          );
         })}
       </ul>
     </section>
