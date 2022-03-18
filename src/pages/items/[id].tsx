@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import PageHeader from 'components/PageHeader';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
-import { Options } from 'types/items';
+import { Items, Options } from 'types/items';
 import { API } from 'constants/api';
 import ProductCard from 'components/ProductCard';
 import InfoNotice from 'components/InfoNotice';
@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 };
 
 interface ItemsProps {
-  detailData: any;
+  detailData: Items;
 }
 
 function Items({ detailData }: ItemsProps) {
@@ -77,7 +77,6 @@ function Items({ detailData }: ItemsProps) {
             <OptionContainer
               optionData={detailData.options}
               discountRate={detailData.discountRate}
-              selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
             />
           )}

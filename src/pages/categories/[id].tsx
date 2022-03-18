@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
 import { Categories } from 'types/categories';
+import { ConCategory } from 'types/interface';
 import { ConItem } from 'types/productOfBrands';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
@@ -30,8 +31,8 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 };
 
 interface BrandsProps {
-  conCategoryData: any;
-  categoryLists: Categories[];
+  conCategoryData: Categories[];
+  categoryLists: ConCategory[];
   clearanceData: ConItem[];
 }
 
@@ -43,7 +44,6 @@ function Categories({
   const router = useRouter();
   const { id } = router.query;
   const findCategoryName = categoryLists.find(el => el.id == id);
-  console.log(conCategoryData);
 
   return (
     <>

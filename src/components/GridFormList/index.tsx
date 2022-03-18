@@ -1,13 +1,12 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Link from 'next/link';
-import { ConCategory } from 'types/interface';
+import { Categories } from 'types/categories';
 import { ConItem } from 'types/productOfBrands';
 import ProductsCardList from 'components/ProductCardList';
-import { path } from 'constants/path';
 
 interface CardProps {
-  data: ConCategory[];
+  data: Categories[];
   path: string;
   urlId?: string | string[];
   clearanceData?: ConItem[];
