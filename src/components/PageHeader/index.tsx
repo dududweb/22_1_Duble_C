@@ -12,7 +12,6 @@ interface PageHeaderProps {
 function PageHeader({ title, isClickedMenu, openMenu }: PageHeaderProps) {
   const router = useRouter();
   const url = router.asPath;
-  console.log(url);
 
   const handleBackButton = () => {
     if (isClickedMenu) {

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import { ConCategory } from 'types/interface';
+import { Categories } from 'types/categories';
 import Link from 'next/link';
 import { path } from 'constants/path';
 
 interface NavOfCategories {
-  categoryLists: ConCategory[];
+  categoryLists: Categories[];
   urlId: string | string[] | undefined;
 }
 

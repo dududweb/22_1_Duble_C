@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 
 interface ProductListProps {
   conCategoryData: ConItem[];
-  brandInfo: any;
+  brandInfo: BrandInfo;
 }
 
 function Brands({ conCategoryData, brandInfo }: ProductListProps) {

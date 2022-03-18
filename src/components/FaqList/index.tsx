@@ -5,7 +5,7 @@ import { FaqDataType } from 'types/faq';
 interface FaqListProps {
   qasId: number;
   question: string;
-  handleQuestion: any;
+  handleQuestion: (id: number | null) => void;
   isSelected: number | boolean;
   selectQuesId: number | null;
 }

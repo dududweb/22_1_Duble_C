@@ -11,7 +11,7 @@ interface FaqFromProps {
 function FaqForm({ selectAnswerData }: FaqFromProps) {
   const [selectQuesId, setSelectQuesId] = useState<number | null>(null);
 
-  const handleQuestion = (id: number) => {
+  const handleQuestion = (id: number | null) => {
     setSelectQuesId(id);
   };
 

@@ -17,7 +17,6 @@ function ProductCard({
   isOnlyAccount,
   imageUrl,
 }: ConItem) {
-  console.log('productList.id>>>>', id);
   return (
     <div className={styles.itemContents}>
       <div className={styles.itemImage}>

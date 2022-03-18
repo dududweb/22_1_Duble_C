@@ -6,7 +6,6 @@ import OptionContents from './OptionContents';
 interface OptionContainerProps {
   optionData: Options[];
   discountRate: number;
-  selectedOption: any;
   setSelectedOption: Dispatch<SetStateAction<Options | undefined>>;
 }
 

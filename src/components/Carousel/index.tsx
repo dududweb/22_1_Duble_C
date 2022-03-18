@@ -13,8 +13,6 @@ function Carousel() {
     setCurrentCarousel(id);
   };
 
-  console.log(currentCarousel);
-  console.log(containerWidth);
   return (
     <section className={styles.slider}>
       <ul

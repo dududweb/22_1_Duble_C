@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import { Items } from 'types/items';
 
 interface InfoNoticeProps {
   warningData: string;
