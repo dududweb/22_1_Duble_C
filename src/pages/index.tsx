@@ -37,6 +37,8 @@ const Home: NextPage<HomeProps> = ({ categoryLists, clearanceData }) => {
     setIsClickedMenu(!isClickedMenu);
   };
 
+  console.log('categoryLists', categoryLists);
+
   return (
     <div className={styles.main}>
       <Head>
