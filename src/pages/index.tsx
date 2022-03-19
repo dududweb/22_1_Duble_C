@@ -31,14 +31,11 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ categoryLists, clearanceData }) => {
-  console.log(clearanceData);
   const [isClickedMenu, setIsClickedMenu] = useState(false);
 
   const openMenu = () => {
     setIsClickedMenu(!isClickedMenu);
   };
-
-  console.log(categoryLists);
 
   return (
     <div className={styles.main}>

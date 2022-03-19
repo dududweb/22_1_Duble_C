@@ -10,8 +10,6 @@ interface ProductCardListProps {
 }
 
 function ProductsCardList({ data, path }: ProductCardListProps) {
-  console.log(data);
-  console.log(path);
   return (
     <div className={styles.itemContainer}>
       {data?.map(productList => {

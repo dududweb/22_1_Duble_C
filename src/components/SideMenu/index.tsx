@@ -10,7 +10,6 @@ interface SideMenuProps {
 }
 
 function SideMenu({ isClickedMenu, openMenu }: SideMenuProps) {
-  console.log(isClickedMenu);
   return (
     <div className={isClickedMenu ? styles.sideMenuOpen : styles.sideMenu}>
       <PageHeader

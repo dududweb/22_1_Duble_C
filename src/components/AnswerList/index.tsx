@@ -6,7 +6,6 @@ interface Props {
 }
 
 function AnswerList({ answer }: Props) {
-  console.log(typeof answer);
   return (
     <div className={styles.answerForm}>
       <p className={styles.answer}>{answer}</p>

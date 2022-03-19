@@ -27,7 +27,6 @@ interface ItemsProps {
 }
 
 function Items({ detailData }: ItemsProps) {
-  console.log(detailData);
   const [isClickedModal, setIsClickedModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Options>();
 
@@ -42,7 +41,6 @@ function Items({ detailData }: ItemsProps) {
     setSelectedOption(undefined);
   };
 
-  console.log('selectedOption', selectedOption);
   return (
     <div>
       <PageHeader title=" " />

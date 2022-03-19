@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import styles from './styles.module.scss';
 import { Options } from 'types/items';
 import { getDate } from 'utils/getDate';
@@ -12,7 +12,6 @@ function SelectedOption({
   selectedOption,
   resetSelectValue,
 }: SelectedOptionProps) {
-  console.log(selectedOption);
   const date = getDate(selectedOption.expireAt);
   const price = Number(selectedOption.sellingPrice).toLocaleString();
 
