@@ -14,4 +14,9 @@ export const SLIDER_DATA = [
     title: '3rd slide',
     imageUrl: 'images/images/slide3.png',
   },
+  {
+    id: 4,
+    title: '4rd slide',
+    imageUrl: 'images/images/slide3.png',
+  },
 ];
