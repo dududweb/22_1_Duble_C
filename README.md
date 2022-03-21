@@ -4,6 +4,12 @@
 
 중고기프티콘 플랫폼 니콘내콘을 Next.js로 구현하는 프로젝트입니다.
 <br/><br/>
+<span>
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3545e2ba-c145-4013-935c-c483e91377dd/ezgif.com-gif-maker_%281%29.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220321T003844Z&X-Amz-Expires=86400&X-Amz-Signature=0b0078efdd60aaf41bb34e903a89404a229387e710769502eae03409247b9361&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22ezgif.com-gif-maker%2520%281%29.gif%22&x-id=GetObject" alt="이미지1"/>
+</span>
+<span>
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0b9f6fb3-af62-46bf-b120-ea6c4dc9497d/contactview.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220321T003959Z&X-Amz-Expires=86400&X-Amz-Signature=663631d96d1df2b874900d191c4324f327744e5d036fe5212a4118ae711bdc39&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22contactview.gif%22&x-id=GetObject" alt="이미지2"/>
+</span>
 
 ## 배포링크
 
@@ -48,7 +54,17 @@
 - <span style="color:red">\*</span> Cypress를 이용한 E2E 테스트 코드 작성
   <br/><br/>
 
-## 프로젝트 회고
+## 1️⃣ 기억에 남았던 점
+
+- ### 고민했던 문제 & 해결
+  - 현재 SSR로 배포된 웹은 처음 방문시 각 페이지 첫 로딩이 오래 걸리는데 이 부분을 해결 하려고 TTV, TTI를 고려하여 리팩토링 중에 있습니다.
+  - CRA와 달랐던 NEXT.JS dynamic routing
+    - 처음 이해가 가지 않았던 Next.js의 동적라우팅을 공식문서를 계속해서 참고하였고 이젠 Next.js 환경내에서 자유롭게 사용가능해졌습니다.
+  - 고객센터 구매, 판매 탭으로 데이터로 불러오기, 토글기능
+    - 해당 페이지는 배포 이후 쉽게 바뀌지 않은 페이지이기 때문에 getStaticProps로 데이터를 받아와 구매탭 리스트가 바로 보이도록 초기값을 처리하였습니다.
+    - 현재는 질문 토글을 클릭할 시에 답변을 클라이언트단에서 fetch 하여 출력에는 문제가 없이 출력이 되나 위에 설명한 바와 같이 배포 이후 쉽게 바뀌지 않는 데이터인데 이 부분도 클릭시마다 데이터를 불러오는 것이 아닌 pre-render하여 서버 부하를 덜 수 있을까? 라는 추가적인 고민중에 있습니다.
+
+## 2️⃣ 성장한 점
 
 ### 2차 시도
 

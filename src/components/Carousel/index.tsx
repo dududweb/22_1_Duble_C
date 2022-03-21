@@ -19,30 +19,29 @@ function Carousel() {
     const touchStart = e.touches[0].clientX;
     setTouchPosition(touchStart);
   };
-  console.log(touchPosition);
 
   const next = () => {
-    setContainerWidth((100 / slideCount) * currentCarousel);
+    setCurrentCarousel(prev => prev + 1);
   };
 
   const prev = () => {
-    setContainerWidth((100 / slideCount) * currentCarousel);
+    setCurrentCarousel(prev => prev - 1);
   };
+  console.log('currentCarousel 초기값', currentCarousel);
 
   const handleTouchEnd = (e: any) => {
     const touchEnd = e.changedTouches[0].clientX;
     if (touchPosition && touchPosition > touchEnd) {
-      setCurrentCarousel(prev => prev + 1);
       next();
-      console.log('currentCarousel', currentCarousel);
-      console.log('containerWidth', containerWidth);
+      // setContainerWidth(
+      //   currentCarousel === 1 ? 0 : (100 / slideCount) * currentCarousel,
+      // );
+      console.log('currentCarousel >>> 다음', currentCarousel);
     } else {
-      setCurrentCarousel(prev => prev - 1);
       prev();
-      console.log('currentCarousel', currentCarousel);
-      console.log('containerWidth', containerWidth);
+      // setContainerWidth((100 / slideCount) * currentCarousel);
+      console.log('currentCarousel >>> 뒤로가기', currentCarousel);
     }
-    console.log('touchEnd', touchEnd);
   };
 
   return (
