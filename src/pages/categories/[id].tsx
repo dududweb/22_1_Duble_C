@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 };
 
 interface BrandsProps {
-  conCategoryData: Categories[];
+  conCategoryData: ConCategory[];
   categoryLists: ConCategory[];
   clearanceData: ConItem[];
 }
