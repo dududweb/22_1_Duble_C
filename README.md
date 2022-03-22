@@ -5,7 +5,7 @@
 중고기프티콘 플랫폼 니콘내콘을 Next.js로 구현하는 프로젝트입니다.
 <br/><br/>
 <span>
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3545e2ba-c145-4013-935c-c483e91377dd/ezgif.com-gif-maker_%281%29.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220321T003844Z&X-Amz-Expires=86400&X-Amz-Signature=0b0078efdd60aaf41bb34e903a89404a229387e710769502eae03409247b9361&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22ezgif.com-gif-maker%2520%281%29.gif%22&x-id=GetObject" alt="이미지1"/>
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3545e2ba-c145-4013-935c-c483e91377dd/ezgif.com-gif-maker_%281%29.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220322%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220322T052040Z&X-Amz-Expires=86400&X-Amz-Signature=40bb4fc9c36c1918520e7414ad7d3c6686a5df8937409dbc375101fe2aaa09c2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22ezgif.com-gif-maker%2520%281%29.gif%22&x-id=GetObject">
 </span>
 <span>
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0b9f6fb3-af62-46bf-b120-ea6c4dc9497d/contactview.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220321T003959Z&X-Amz-Expires=86400&X-Amz-Signature=663631d96d1df2b874900d191c4324f327744e5d036fe5212a4118ae711bdc39&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22contactview.gif%22&x-id=GetObject" alt="이미지2"/>
