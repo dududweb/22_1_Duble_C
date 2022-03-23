@@ -20,28 +20,34 @@ function Carousel() {
     setTouchPosition(touchStart);
   };
 
-  const next = () => {
-    setCurrentCarousel(prev => prev + 1);
-  };
-
-  const prev = () => {
-    setCurrentCarousel(prev => prev - 1);
-  };
-  console.log('currentCarousel 초기값', currentCarousel);
-
   const handleTouchEnd = (e: any) => {
     const touchEnd = e.changedTouches[0].clientX;
     if (touchPosition && touchPosition > touchEnd) {
+      setCurrentCarousel(prev => prev + 1);
       next();
       // setContainerWidth(
       //   currentCarousel === 1 ? 0 : (100 / slideCount) * currentCarousel,
       // );
-      console.log('currentCarousel >>> 다음', currentCarousel);
+      // console.log('currentCarousel >>> 다음', currentCarousel);
     } else {
+      setCurrentCarousel(prev => prev - 1);
       prev();
+
       // setContainerWidth((100 / slideCount) * currentCarousel);
-      console.log('currentCarousel >>> 뒤로가기', currentCarousel);
+      // console.log('currentCarousel >>> 뒤로가기', currentCarousel);
     }
+  };
+
+  const next = () => {
+    setContainerWidth(
+      currentCarousel === 1 ? 0 : (100 / slideCount) * currentCarousel,
+    );
+  };
+
+  const prev = () => {
+    setContainerWidth(
+      currentCarousel === 1 ? 0 : (100 / slideCount) * currentCarousel,
+    );
   };
 
   return (
