@@ -32,9 +32,6 @@ function Carousel() {
     } else {
       setCurrentCarousel(prev => prev - 1);
       prev();
-
-      // setContainerWidth((100 / slideCount) * currentCarousel);
-      // console.log('currentCarousel >>> 뒤로가기', currentCarousel);
     }
   };
 
