@@ -24,7 +24,7 @@ export interface Items {
 export interface Options {
   count: number;
   expireAt: string;
-  sellingPrice: number;
+  sellingPrice: number | string;
 }
 
 export interface ConCategory2 {

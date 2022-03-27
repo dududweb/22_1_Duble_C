@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { Options } from 'types/items';
 import { getDate } from 'utils/getDate';
+import { formatingPrice } from 'utils/formatingPrice';
 
 interface SelectedOptionProps {
   selectedOption: Options;
@@ -12,8 +13,9 @@ function SelectedOption({
   selectedOption,
   resetSelectValue,
 }: SelectedOptionProps) {
+  console.log(typeof 'adf', selectedOption.sellingPrice);
   const date = getDate(selectedOption.expireAt);
-  const price = Number(selectedOption.sellingPrice).toLocaleString();
+  const price = formatingPrice(selectedOption.sellingPrice);
 
   return (
     <div className={styles.selecteOption}>
