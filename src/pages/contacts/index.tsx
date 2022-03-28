@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import type { GetStaticProps, NextPage } from 'next';
+import React, { useState } from 'react';
+import type { GetStaticProps } from 'next';
 import { API } from 'constants/api';
-import { path } from 'constants/path';
 import styles from './styles.module.scss';
 import { FaqType, FaqDataType } from 'types/faq';
 import axios from 'axios';
 import PageHeader from 'components/PageHeader';
-import FaqForm from 'components/FaqForm';
+import FaqForm from 'components/Contacts/FaqForm';
+import TypeTap from './TypeTap';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const faqType = await axios(`${API.FAQ_TYPE}`);
-  const faqList = await axios(`${API.FAQ_DATA}?qaTypeId=1`);
+  const faqType = await axios(`${API.FAQ_TYPE}`); // 구매 or 판매 버튼 타입을 서버로부터 가져오기
+  const faqList = await axios(`${API.FAQ_DATA}?qaTypeId=1`); // 컨택트 페이지 진입 시에 구매타입 데이터를 보여주기 위해 호출 (초기화면 데이터)
 
   return {
     props: {
@@ -21,18 +21,21 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 interface ContactsProps {
+  //데이터 타이핑
   qaTypes: FaqType[];
   faqData: FaqDataType[];
 }
 
 function Contacts({ qaTypes, faqData }: ContactsProps) {
-  const [selectTap, setSelectTap] = useState(1);
-  const [selectAnswerData, setSelectAnswerData] = useState(faqData);
+  const [selectTap, setSelectTap] = useState(1); // 현재 선택된 탭 state 초기값으로 구매1 이 선택되어지게 선언 할당
+  const [selectQnAData, setSelectQnAData] = useState(faqData); // 상단에서 호출한 구매1 의 질문/ 답변 데이터 state저장
 
-  const selectTapData = async (id: number) => {
+  const selectTapGetData = async (id: number) => {
+    // 구매 / 판매 셀렉트 탭을 클릭시 데이터 호출하는 함수
     try {
-      const response = await axios.get(`${API.FAQ_DATA}?qaTypeId=${id}`);
-      setSelectAnswerData(response.data.qas);
+      //async await 쓴 이유
+      const response = await axios.get(`${API.FAQ_DATA}?qaTypeId=${id}`); // 구매 / 판매 셀렉트 탭을 클릭 시 해당 데이터 호출
+      setSelectQnAData(response.data.qas); //데이터 저장
     } catch (error) {
       console.error(error);
     }
@@ -51,23 +54,20 @@ function Contacts({ qaTypes, faqData }: ContactsProps) {
         <h3 className={styles.faqTitle}>자주 묻는 질문</h3>
         <div className={styles.faqTypeBox}>
           {qaTypes.map(type => {
+            //탭 버튼 Map
             return (
-              <button
+              <TypeTap
                 key={type.id}
-                className={
-                  selectTap === type.id
-                    ? styles.typeButtonRed
-                    : styles.typeButton
-                }
-                onClick={() => selectTapData(type.id)}
-              >
-                {type.name}
-              </button>
+                selectTap={selectTap}
+                typeId={type.id}
+                selectTapGetData={selectTapGetData}
+                name={type.name}
+              />
             );
           })}
         </div>
       </div>
-      <FaqForm selectAnswerData={selectAnswerData} />
+      <FaqForm selectQnAData={selectQnAData} />
     </div>
   );
 }
