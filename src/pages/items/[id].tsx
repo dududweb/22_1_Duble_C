@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import PageHeader from 'components/PageHeader';
+import PageHeader from 'components/common/PageHeader';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { Items, Options } from 'types/items';
 import { API } from 'constants/api';
-import ProductCard from 'components/ProductCard';
+import ProductCard from 'components/common/ProductCard';
 import InfoNotice from 'components/InfoNotice';
 import CommonButton from 'components/CommonButton';
-import OptionContainer from 'components/OptionContainer';
-import SelectedOption from 'components/SelectedOption';
+import OptionContainer from 'components/Detail/OptionContainer';
+import SelectedOption from 'components/Detail/SelectedOption';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;

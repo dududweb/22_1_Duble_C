@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import { SLIDER_DATA } from './sliderData';
-import Indicator from 'components/Indicator';
+import Indicator from 'components/Carousel/Indicator';
 
 function Carousel() {
   const [currentCarousel, setCurrentCarousel] = useState<number>(1);

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import { ConItem } from 'types/productOfBrands';
-import ProductCard from 'components/ProductCard';
+import ProductCard from 'components/common/ProductCard';
 import Link from 'next/link';
 
 interface ProductCardListProps {

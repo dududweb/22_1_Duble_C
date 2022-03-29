@@ -22,6 +22,7 @@ function FaqForm({ selectQnAData }: FaqFormProps) {
         return (
           <div className={styles.faqInner}>
             <QuestionList // 질문 리스트
+              key={items.id}
               questionId={items.id}
               question={items.question}
               handleQuestion={handleQuestion}

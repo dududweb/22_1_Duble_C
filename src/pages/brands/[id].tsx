@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from 'styles/components/store/storeGridLayout.module.scss';
-import ProductsCardList from 'components/ProductCardList';
-import PageHeader from 'components/PageHeader';
+import styles from './styles.module.scss';
+import ProductsCardList from 'components/Brands/ProductCardList';
+import PageHeader from 'components/common/PageHeader';
 import { API } from 'constants/api';
 import { path } from 'constants/path';
 import { ConItem, BrandInfo } from 'types/productOfBrands';
 import axios from 'axios';
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetServerSideProps } from 'next';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;

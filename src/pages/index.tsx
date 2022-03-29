@@ -9,9 +9,9 @@ import { API } from 'constants/api';
 import { ConCategory } from 'types/interface';
 import { ConItem } from 'types/productOfBrands';
 import { path } from 'constants/path';
-import PageHeader from 'components/PageHeader';
+import PageHeader from 'components/common/PageHeader';
 import SideMenu from 'components/SideMenu';
-import ProductsCardList from 'components/ProductCardList';
+import ProductsCardList from 'components/Brands/ProductCardList';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await axios(API.MAIN_CATEGORIES);

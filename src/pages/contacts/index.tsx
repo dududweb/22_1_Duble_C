@@ -4,7 +4,7 @@ import { API } from 'constants/api';
 import styles from './styles.module.scss';
 import { FaqType, FaqDataType } from 'types/faq';
 import axios from 'axios';
-import PageHeader from 'components/PageHeader';
+import PageHeader from 'components/common/PageHeader';
 import FaqForm from 'components/Contacts/FaqForm';
 import TypeTap from './TypeTap';
 

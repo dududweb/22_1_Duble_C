@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import Link from 'next/link';
 import { ConCategory } from 'types/interface';
 import { ConItem } from 'types/productOfBrands';
-import ProductsCardList from 'components/ProductCardList';
+import ProductsCardList from 'components/Brands/ProductCardList';
 
 interface CardProps {
   data: ConCategory[];
@@ -14,7 +14,7 @@ interface CardProps {
 
 function GridFormList({ data, path, urlId, clearanceData }: CardProps) {
   return (
-    <>
+    <section className={styles.storeSection}>
       {urlId === '1' ? (
         <div className={styles.clearanceWrap}>
           <ProductsCardList data={clearanceData} path={'/items/'} />
@@ -39,7 +39,7 @@ function GridFormList({ data, path, urlId, clearanceData }: CardProps) {
           })}
         </div>
       )}
-    </>
+    </section>
   );
 }
 

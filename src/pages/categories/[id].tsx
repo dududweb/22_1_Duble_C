@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
-import styles from 'styles/components/store/storeGridLayout.module.scss';
 import NavOfCategories from 'components/NavOfCategories';
-import PageHeader from 'components/PageHeader';
+import PageHeader from 'components/common/PageHeader';
 import GridFormList from 'components/GridFormList';
 import { useRouter } from 'next/router';
 import { API } from 'constants/api';
@@ -49,14 +48,13 @@ function Categories({
     <>
       {findCategoryName && <PageHeader title={findCategoryName.name} />}
       <NavOfCategories categoryLists={categoryLists} urlId={id} />
-      <section className={styles.storeSection}>
-        <GridFormList
-          data={conCategoryData}
-          path={path.brands}
-          urlId={id}
-          clearanceData={clearanceData}
-        />
-      </section>
+
+      <GridFormList
+        data={conCategoryData}
+        path={path.brands}
+        urlId={id}
+        clearanceData={clearanceData}
+      />
     </>
   );
 }
