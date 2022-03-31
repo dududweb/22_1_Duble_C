@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import type { GetServerSideProps, NextPage } from 'next';
-import NavOfCategories from 'components/NavOfCategories';
+import NavOfCategories from 'components/Category/NavOfCategories';
 import PageHeader from 'components/common/PageHeader';
 import GridFormList from 'components/GridFormList';
 import { useRouter } from 'next/router';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import PageHeader from 'components/PageHeader';
+import PageHeader from 'components/common/PageHeader';
 import Link from 'next/link';
 import { path } from 'constants/path';
 

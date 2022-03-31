@@ -5,7 +5,7 @@ interface QuestionListProps {
   questionId: number;
   question: string;
   handleQuestion: (id: number | null) => void;
-  isSelected: number | boolean;
+  isSelected: boolean;
   selectQuesId: number | null;
 }
 

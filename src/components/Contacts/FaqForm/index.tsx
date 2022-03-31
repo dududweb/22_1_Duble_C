@@ -13,7 +13,7 @@ function FaqForm({ selectQnAData }: FaqFormProps) {
 
   const handleQuestion = (id: number | null) => {
     //선택된 토글 질문 아이디를 업데이트 해준다.
-    setSelectQuesId(id);
+    setSelectQuesId(id); //ㅇ이쪼ㅗㅗㅗㅗㅗㅗㄱ에서 한버
   };
 
   return (
