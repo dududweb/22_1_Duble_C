@@ -13,6 +13,8 @@ import SelectedOption from 'components/Detail/SelectedOption';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
+  const { res } = context;
+  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`);
   const { data } = await axios(`${API.PRODUCT_OF_BRANDS}/${id}`);
 
   return {

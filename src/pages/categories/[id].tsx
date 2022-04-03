@@ -13,6 +13,8 @@ import { ConItem } from 'types/productOfBrands';
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const { id } = context.query;
+  const { res } = context;
+  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`);
   const { data } = await axios(`${API.MAIN_CATEGORIES}?conCategory1Id=${id}`);
   const res2 = await axios(`${API.MAIN_CATEGORIES}/${id}/nested`);
   const clearance = await axios(`${API.PRODUCT_OF_BRANDS}/soon`);

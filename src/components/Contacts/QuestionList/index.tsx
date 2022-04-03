@@ -12,7 +12,6 @@ interface QuestionListProps {
 function QuestionList({
   questionId,
   question,
-  selectQuesId,
   isSelected,
   handleQuestion,
 }: QuestionListProps) {
