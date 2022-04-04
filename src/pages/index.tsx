@@ -32,6 +32,7 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ categoryLists, clearanceData }) => {
   const [isClickedMenu, setIsClickedMenu] = useState(false);
+  console.log(categoryLists);
 
   const openMenu = () => {
     setIsClickedMenu(!isClickedMenu);
